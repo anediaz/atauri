@@ -45,6 +45,7 @@
     "react-dom": "^18.3.1",
     "react-i18next": "^15.4.0",
     "react-ikusi": "^4.0.0",
+    "react-intl": "^7.1.6",
     "react-router-dom": "^7.1.5",
     "ts-pattern": "^5.6.2",
     "vite-tsconfig-paths": "^5.1.4"

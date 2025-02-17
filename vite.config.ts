@@ -22,5 +22,5 @@ export default defineConfig({
     build: {
         sourcemap: true,
     },
-    base: "https://anediaz.github.io/atauri",
+    //base: "https://anediaz.github.io/atauri",
 })

@@ -1,5 +1,5 @@
 import { DEFAULT_LANGUAGE, isAppLanguage } from 'app.constants';
-import { AppLayout } from 'AppLayout';
+import { AppLayout } from 'AppLayout/AppLayout';
 import { appStrings } from 'data';
 import {IntlProvider} from 'react-intl';
 import { useNavigate, useParams } from 'react-router-dom';

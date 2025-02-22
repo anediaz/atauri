@@ -1,11 +1,10 @@
-import { AppLayout } from "AppLayout";
+import { ARAOTZ_ROUTES } from "components/araotz/araotz.routes";
+import { GATZA_ROUTES } from "components/gatza/gatza.routes";
 import { GeneralError } from "components/GeneralError";
 import { Home } from "components/Home";
 import { LocalizedRoute } from "LocalizedRoute";
 import { Suspense } from "react";
 import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
-import { Gatza } from "components/Gatza";
-import { Araotz } from "components/Araotz";
 
 const LocalizedRouter = () => {
   return (
@@ -13,12 +12,12 @@ const LocalizedRouter = () => {
       <Routes>
         <Route key="root" path="/:lang">
           <Route key="root" path="/:lang" element={<LocalizedRoute><Home /></LocalizedRoute>} />
-          <Route path="/:lang/gatza" element={<LocalizedRoute><Gatza /></LocalizedRoute>} />
-          <Route path="/:lang/araotz" element={<LocalizedRoute><Araotz /></LocalizedRoute>} />
+          {GATZA_ROUTES}
+          {ARAOTZ_ROUTES}
           <Route path="/:lang/*" element={<LocalizedRoute><GeneralError /></LocalizedRoute>} />
         </Route>
         <Route path='*' element={<Navigate to='/eu'/>} />
-      </Routes>
+        </Routes>
     </div>
   );
 }
@@ -26,9 +25,7 @@ const LocalizedRouter = () => {
 const App = () => (
   <Suspense fallback={<div>suspense fallback</div>}>
     <BrowserRouter>
-      <AppLayout>
         <LocalizedRouter />
-      </AppLayout>
     </BrowserRouter>
   </Suspense>
 );

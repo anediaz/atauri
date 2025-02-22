@@ -1,29 +1,33 @@
-import { APP_LANGUAGES } from "app.constants"
+import { APP_LANGUAGES, AppLanguage, DEFAULT_LANGUAGE, isAppLanguage } from "app.constants"
 import { Link, useLocation, useNavigate, useParams } from "react-router-dom"
+import { MENU_ITEMS } from "router/router.constants";
+import { useIntl } from 'react-intl';
 
-const LanguageSelector = ({ currentLang }: { currentLang: string }) => {
+interface LanguageSelectorProps {
+    selectedLanguage: AppLanguage;
+ }
+
+const LanguageSelector = ({ selectedLanguage }: LanguageSelectorProps) => {
     const { pathname } = useLocation();
     const navigate = useNavigate();
-    const isActive = (l: string) => {
-        return l === currentLang;
-    };
+    const isActive = (language: AppLanguage) => language === selectedLanguage;
 
     return <div className="LanguageSelector" role="menuitem">
       <ul>
-        {APP_LANGUAGES.map((lang) => (
+        {APP_LANGUAGES.map((language) => (
           <li
-            title={lang}
-            key={lang}
+            title={language}
+            key={language}
             role="menuitem"
             onKeyDown={() => { }}
-            aria-label={`language-item-${lang}`}
-            style={{ color: isActive(lang) ? 'red' : 'black', cursor: 'pointer' }}
+            aria-label={`language-item-${language}`}
+            style={{ color: isActive(language) ? 'red' : 'black', cursor: 'pointer' }}
                 onClick={() => {
                 const path = pathname.substring(3);
-                navigate(`/${lang}${path}`);
+                navigate(`/${language}${path}`);
              }}    
           >
-            {lang}
+            {language}
           </li>
         ))}
       </ul>
@@ -31,19 +35,22 @@ const LanguageSelector = ({ currentLang }: { currentLang: string }) => {
 }
 
 export const Menu = () => {
-    const {lang = 'eu'} = useParams();
-    return (
-        <div role='navigation' style={{ display: "flex", flexDirection: "column", padding:"30px 10px", border: '1px solid black' }}>
-            <h3>Atauri</h3>
-            <LanguageSelector currentLang={lang} />
-            <Link to={`/${lang}/gatza`}>Gatza</Link>
-            <Link to={`/${lang}/gatza/book`}>Liburua</Link>
-            <Link to={`/${lang}/gatza/makingof`}>Making of</Link>
-            <Link to={`/${lang}/gatza/news`}>Berriak</Link>
-            <Link to={`/${lang}/gatza/info`}>Info</Link>
-            <Link to={`/${lang}/araotz`}>Araotz</Link>
-            <Link to={`/${lang}/araotz/makingof`}>Making of</Link>
-            <Link to={`/${lang}/araotz/info`}>Info</Link>
-        </div>
-    )
+  const { formatMessage } = useIntl();
+  const { lang = DEFAULT_LANGUAGE } = useParams();
+  if (!isAppLanguage(lang)) { 
+    return null;
+  }
+  const { GATZA_MENU_ITEMS, ARAOTZ_MENU_ITEMS } = MENU_ITEMS;
+  return (
+    <div role='navigation' style={{ display: "flex", flexDirection: "column", padding: "30px 10px", border: '1px solid black' }}>
+      <h3>Atauri</h3>
+      <LanguageSelector selectedLanguage={lang} />
+      {GATZA_MENU_ITEMS.map((item) => (
+        <Link key={item.menuItem} to={`/${lang}${item.path}`}>{formatMessage({ id: item.menuItem })}</Link>
+      ))}
+      {ARAOTZ_MENU_ITEMS.map((item) => (
+        <Link key={item.menuItem} to={`/${lang}${item.path}`}>{formatMessage({ id: item.menuItem })}</Link>
+      ))}
+    </div>
+  );
 }

@@ -20,6 +20,11 @@ export const ARAOTZ_ROUTES: RouteInfo[] = [
                 path: '/araotz/info',
             }
         ]
-    }]
+    }];
+export const ARAOTZ_MENU_ITEMS = [
+    { menuItem: 'menu.araotz', path: '/araotz' },
+    { menuItem: 'menu.araotz.makingof', path: '/araotz/makingof' },
+    { menuItem: 'menu.araotz.info', path: '/araotz/info' },
+]
 
 

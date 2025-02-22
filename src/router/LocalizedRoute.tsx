@@ -1,22 +1,24 @@
-import { DEFAULT_LANGUAGE, isAppLanguage } from 'app.constants';
+import { AppLanguage, DEFAULT_LANGUAGE, isAppLanguage } from 'app.constants';
 import { AppLayout } from 'AppLayout/AppLayout';
-import { appStrings } from 'data';
-import {IntlProvider} from 'react-intl';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
+import { useParams } from 'react-router-dom';
 
 export const LocalizedRoute = ({ children }: { children: React.ReactNode }) => {
-    const { lang } = useParams();
-    const navigate = useNavigate();
-    if (!isAppLanguage(lang)) {
-        navigate(DEFAULT_LANGUAGE);
-        return null;
+    const { i18n } = useTranslation();
+    const { locale = DEFAULT_LANGUAGE } = useParams<AppLanguage>();
+
+    useEffect(() => {
+        i18n.changeLanguage(isAppLanguage(locale) ? locale : DEFAULT_LANGUAGE);
+    }, [i18n, locale]);
+
+    const updateLanguage = (lang: AppLanguage) => {
+        i18n.changeLanguage(lang as AppLanguage);
     }
     return (
-        <IntlProvider locale={lang} messages={appStrings[lang]}>
-            <AppLayout>
-                {children}
-            </AppLayout>
-        </IntlProvider>
+        <AppLayout setLanguage={updateLanguage}>
+            {children}
+        </AppLayout>
 
     )
 }

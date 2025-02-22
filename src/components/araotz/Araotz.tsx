@@ -1,11 +1,11 @@
-import { useIntl } from 'react-intl';
+import { useTranslation } from "react-i18next";
 
 export const Araotz = () => {
-    const { formatMessage } = useIntl();
+    const [t] = useTranslation();
     return (
         <div>
             <h1>Araotz</h1>
-            <div>{formatMessage({ id: 'araotz' })}</div>
+            <div>{t( 'araotz')}</div>
         </div>
     )
 }

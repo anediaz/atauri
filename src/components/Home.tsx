@@ -1,13 +1,13 @@
-import { useIntl } from 'react-intl';
+import { useTranslation } from "react-i18next";
 
 export const Home = () => {
-    const { formatMessage } = useIntl();
+  const [t] = useTranslation();
 
     return (
         <div>
             <h1>Home</h1>
             <p>Welcome to the home page</p>
-            <div>{formatMessage({ id: 'home' })}</div>
+            <div>{t('home')}</div>
         </div>
     )
 }

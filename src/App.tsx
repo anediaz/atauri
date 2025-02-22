@@ -3,6 +3,7 @@ import { Suspense } from "react";
 import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
 import { buildRoute, buildRoutes } from "router/Routes";
 import { BASE_PATH, ROUTES } from "router/router.constants";
+import './i18n/i18n';
 
 
 const LocalizedRouter = () => {

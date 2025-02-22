@@ -1,20 +1,19 @@
-import { ARAOTZ_ROUTES } from "components/araotz/araotz.routes";
-import { GATZA_ROUTES } from "components/gatza/gatza.routes";
-import { GeneralError } from "components/GeneralError";
-import { Home } from "components/Home";
-import { LocalizedRoute } from "LocalizedRoute";
 import { Suspense } from "react";
 import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
+import { buildRoute, buildRoutes } from "router/Routes";
+import { BASE_PATH, ROUTES } from "router/router.constants";
+
 
 const LocalizedRouter = () => {
+
   return (
     <div className="App">
       <Routes>
-        <Route key="root" path="/:lang">
-          <Route key="root" path="/:lang" element={<LocalizedRoute><Home /></LocalizedRoute>} />
-          {GATZA_ROUTES}
-          {ARAOTZ_ROUTES}
-          <Route path="/:lang/*" element={<LocalizedRoute><GeneralError /></LocalizedRoute>} />
+        <Route key="root" path={BASE_PATH}>
+          {buildRoute(ROUTES.HOME_ROUTE)}
+          {buildRoutes(ROUTES.GATZA_ROUTES)}
+          {buildRoutes(ROUTES.ARAOTZ_ROUTES)}
+          {buildRoute(ROUTES.ERROR_ROUTE)}
         </Route>
         <Route path='*' element={<Navigate to='/eu'/>} />
         </Routes>

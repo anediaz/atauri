@@ -29,7 +29,9 @@ export const AppLayout = ({ setLanguage, children }: AppLayoutProps) => {
           <main>{children}</main>
         </div>
       </body>
-      <Footer />
+      <div className="footer">
+        <Footer />
+      </div>
     </div>
   )
 }

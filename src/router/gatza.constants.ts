@@ -33,8 +33,12 @@ export const GATZA_ROUTES: RouteInfo[] = [
             }
         ]
     }];
-    
-export const GATZA_MENU_ITEMS = [
+
+export interface MenuItem {
+    menuItem: string;
+    path: string;
+}
+export const GATZA_MENU_ITEMS: MenuItem[] = [
     { menuItem: 'menu.gatza', path: '/gatza' },
     { menuItem: 'menu.gatza.book', path: '/gatza/book' },
     { menuItem: 'menu.gatza.makingof', path: '/gatza/makingof' },

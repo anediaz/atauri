@@ -1,35 +1,37 @@
-import { APP_LANGUAGES, AppLanguage, DEFAULT_LANGUAGE } from 'app.constants';
+import { APP_LANGUAGES, AppLanguage } from 'app.constants';
 import './language-selector.css';
-import { useLocation, useNavigate, useParams } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 interface LanguageSelectorProps {
+  currentLanguage: AppLanguage
   handleLanguageClick: (v:AppLanguage) => void;
 }
 
-export const LanguageSelector = ({ handleLanguageClick }: LanguageSelectorProps) => {
-  const { lang = DEFAULT_LANGUAGE } = useParams();
-  const getClassName = (language: AppLanguage) => `language ${language} ${lang === language ? 'active' : ''}`;
+export const LanguageSelector = ({ currentLanguage, handleLanguageClick }: LanguageSelectorProps) => {
   const { pathname } = useLocation();
   const navigate = useNavigate();
+
+  const getClassName = (langItem: AppLanguage) => `language ${langItem === currentLanguage ? 'active' : ''}`;
+
   return (
     <div className="language-selector" role="menuitem">
       <ul>
-        {APP_LANGUAGES.map((language) => (
+        {APP_LANGUAGES.map((langItem) => (
           <li
-            key={language}
-            title={language}
+            key={langItem}
+            title={langItem}
             role="menuitem"
-            aria-label={`language-item-${language}`}
-            className={getClassName(language as AppLanguage)}
+            aria-label={`language-item-${langItem}`}
+            className={getClassName(langItem as AppLanguage)}
             onClick={() => {
               const path = pathname.substring(3);
-              handleLanguageClick(language);
-              navigate(`/${language}${path}`);
+              handleLanguageClick(langItem);
+              navigate(`/${langItem}${path}`);
               
             }}
             onKeyDown={() => { }}
           >
-            {language}
+            {langItem}
           </li>
         ))}
       </ul>

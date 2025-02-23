@@ -1,7 +1,7 @@
 .menu {
     display: flex;
     flex-direction: column;
-    padding: 30px 10px;
+    padding: 30px 0;
     height: 100%;
     width: 0;
     margin-left: 0px;
@@ -10,38 +10,42 @@
     top: 0;
     left: 0;
     overflow-x: hidden;
-    padding-top: 60px;
     transition: 0.5s;
 }
 
 .menu--is-open {
     width: 250px;
     background-color: aliceblue;
+    padding: 30px 30px;
 }
 
 
-.menu .menuItem {
-  padding: 8px 8px 8px 32px;
+.menu .menu-item {
   text-decoration: none;
-  font-size: 20px;
   color: #818181;
   display: block;
   transition: 0.3s;
 }
 
-.menu .menuItem:hover {
-  color: #f1f1f1;
+
+.menu .menu-item-main {
+  font-size: 20px;
+  padding-top: 8px;
 }
 
-.menu .closebtn {
-  position: absolute;
-  top: 0;
-  right: 25px;
-  font-size: 30px;
-  margin-left: 50px;
+.menu .menu-item-sub {
+  font-size: 15px;
+  padding-top: 4px;
+  margin-left: 20px;
+  transition: 0.3s;
+}
+
+.menu .menu-item:hover {
+  color: #f1f1f1;
+  cursor: pointer;
 }
 
 @media screen and (max-height: 450px) {
   .menu {padding-top: 15px;}
-  .menu .menuItem {font-size: 18px;}
+  .menu .menu-item {font-size: 18px;}
 }

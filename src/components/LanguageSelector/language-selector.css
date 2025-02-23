@@ -1,0 +1,94 @@
+.language-selector {
+  margin: 0 auto;
+  font-size: 1.2rem;
+  margin-top: 4rem;
+}
+
+.language-selector .language {
+  opacity: 0.5;
+}
+.language-selector .language:hover {
+  cursor: pointer;
+}
+.language-selector .active {
+  opacity: 1;
+  font-weight: 600;
+}
+.language-selector ul {
+  margin: 0;
+  padding: 0;
+  text-align: right;
+}
+.language-selector ul li {
+  list-style-type: none;
+  display: inline;
+}
+.language-selector ul li:not(:first-child):before {
+  content: " | ";
+}
+
+/* MacBook 13"*/
+@media screen and (max-width: 1920px) {
+  .language-selector {
+    font-size: 0.8rem;
+  }
+}
+/*iPadPro Horizontal*/
+@media screen and (max-width: 1382px) {
+  .language-selector {
+    font-size: 1.5rem;
+  }
+  .language-selector ul {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+
+  .language-selector ul li {
+    text-align: center;
+    height: 4rem;
+  }
+
+  .language-selector ul li:not(:first-child):before {
+    content: "";
+  }
+  .language-selector ul li:last-child:after {
+    content: "";
+  }
+}
+/*iPadPro Vertical / iPad HorizontaL*/
+@media screen and (max-width: 1024px) {
+  
+}
+
+/*iPhoneX horizontal*/
+@media screen and (max-width: 900px) {
+  .language-selector {
+    font-size: 0.9rem;
+  }
+
+  .language-selector ul li {
+    height: 2.5rem;
+  }
+}
+
+/*iPad Vertical iPhone6/7/8 Horizontal*/
+@media screen and (max-width: 768px) {
+  .language-selector {
+    font-size: 1.1rem;
+  }
+  .language-selector ul li {
+    height: 3.5rem;
+  }
+}
+
+/*iPhoneX/iPhone6/7/8 vertical*/
+@media screen and (max-width: 480px) {
+  .language-selector {
+    font-size: 0.8rem;
+  }
+  .Langlanguage-selectoruageSelector ul li {
+    height: 2rem;
+  }
+}
+

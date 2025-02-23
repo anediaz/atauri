@@ -10,8 +10,7 @@
 }
 
 .app-layout .header {
-    height: 12vh;
-    flex-grow: 1;
+    height: 10rem;
     width: 100%;
     padding: 2% 0;
 }
@@ -20,6 +19,8 @@
     height: 100%;
     width: 100%;
     position: relative;
+    min-height: 60vh;
+    flex-grow: 1;
 }
 
 .app-layout .body .content {

@@ -8,7 +8,7 @@ import './i18n/i18n';
 
 const LocalizedRouter = () => {
   return (
-    <div className="App">
+    <div>
       <Routes>
         <Route key="root" path={BASE_PATH}>
           {buildRoute(ROUTES.HOME_ROUTE)}

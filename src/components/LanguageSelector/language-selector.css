@@ -1,7 +1,9 @@
 .language-selector {
   margin: 0 auto;
   font-size: 1.2rem;
-  margin-top: 4rem;
+  position: absolute;
+  top: 15%;
+  right:4%;
 }
 
 .language-selector .language {
@@ -30,7 +32,7 @@
 /* MacBook 13"*/
 @media screen and (max-width: 1920px) {
   .language-selector {
-    font-size: 0.8rem;
+    font-size: 1rem;
   }
 }
 

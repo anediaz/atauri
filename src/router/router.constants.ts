@@ -1,5 +1,5 @@
 import { GeneralError } from "components/GeneralError"
-import { Home } from "components/Home"
+import { Home } from "components/Home/Home"
 import { RouteInfo } from "router/Routes"
 import { ARAOTZ_MENU_ITEMS, ARAOTZ_ROUTES } from "router/araotz.constants";
 import { GATZA_MENU_ITEMS, GATZA_ROUTES } from "router/gatza.constants";

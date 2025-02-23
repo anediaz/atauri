@@ -1,0 +1,16 @@
+.home .slider {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+.home .slider .slider-image {
+    grid-row: 1;
+    grid-column: 1;
+    visibility: hidden;
+    height: 70vh;
+}
+
+.home .slider .slider-image--is-visible {
+    visibility: visible;
+}

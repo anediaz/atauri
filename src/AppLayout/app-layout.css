@@ -18,4 +18,18 @@
     grid-template-columns: 1fr 6fr;
     height: 100%;
     width: 100%;
+    position: relative;
+}
+
+.app-layout .body .content{
+    height: 100%;
+    width: 100%;
+    padding: 2%;
+    transition: margin-left .5s;
+    padding: 20px;
+    margin-left: 0;
+}
+
+.app-layout .body .content--menu-is-open{
+    margin-left: 250px;
 }

@@ -15,16 +15,14 @@
 
 .menu--is-open {
     width: 250px;
-    background-color: aliceblue;
     padding: 30px 30px;
 }
 
 
 .menu .menu-item {
   text-decoration: none;
-  color: #818181;
+  color: #bebaba;
   display: block;
-  transition: 0.3s;
 }
 
 
@@ -37,12 +35,16 @@
   font-size: 15px;
   padding-top: 4px;
   margin-left: 20px;
-  transition: 0.3s;
 }
 
-.menu .menu-item:hover {
-  color: #f1f1f1;
+.menu-item:hover {
+  color: #757272;
   cursor: pointer;
+}
+
+.menu .menu-item--is-selected {
+  color: rgb(42, 54, 59);
+  font-weight: bold;
 }
 
 @media screen and (max-height: 450px) {

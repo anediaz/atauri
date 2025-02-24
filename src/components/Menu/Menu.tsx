@@ -1,6 +1,6 @@
 import { DEFAULT_LANGUAGE, isAppLanguage } from "app.constants"
 import { useTranslation } from "react-i18next";
-import { Link, useParams } from "react-router-dom"
+import { Link, useLocation, useParams } from "react-router-dom"
 import { MENU_ITEMS } from "router/router.constants";
 import './menu.css';
 import { MenuItem } from "router/gatza.constants";
@@ -10,29 +10,32 @@ interface MenuProps {
 }
 
 
-export const Menu = ({isOpen}:MenuProps) => {
+export const Menu = ({ isOpen }:MenuProps) => {
   const [t] = useTranslation();
+  const { pathname } = useLocation();
+  const currentPath = pathname.substring(3);
   const { lang = DEFAULT_LANGUAGE } = useParams();
   if (!isAppLanguage(lang)) { 
     return null;
   }
   const { GATZA_MENU_ITEMS, ARAOTZ_MENU_ITEMS } = MENU_ITEMS;
 
+  const getClassName = (itemPath: string, isGroup: boolean) => { 
+    const className = isGroup ? "menu-item menu-item-main" : "menu-item menu-item-sub";
+    return currentPath === itemPath ? className + ' menu-item--is-selected' : className;
+  }
   const buildMenuGroup = (items:MenuItem[]) => {
     return items.map((item, index) => {
-      if (index === 0) {
-        return (
-          <div className="menu-item-main" style={{ display: "flex", alignItems: "center", justifyContent: "flex-start", gap: '5px' }}>
-            <div className="menu-item">+</div>
-            <Link key={item.menuItem} to={`/${lang}${item.path}`} className="menu-item">{t(item.menuItem)}</Link>
-          </div>
-        );
-      }
-      else {
-        return <Link key={item.menuItem} to={`/${lang}${item.path}`} className="menu-item menu-item-sub">{t(item.menuItem)}</Link>
-      }
+      const isGroup = index === 0;
+      const className = getClassName(item.path, isGroup);
+      const groupLabel = isGroup ? "+ " : "";
+      const label = t(item.menuItem);
+      return (
+        <Link key={item.menuItem} to={`/${lang}${item.path}`} className={className}>{groupLabel}{label}</Link>
+      );
     });
   }
+
   return (
     <div role='navigation' className={`menu ${isOpen ? 'menu--is-open' : ''}`}>
       <Link to={`/${lang}`} className="menu-item menu-item-main">{t('home')}</Link>

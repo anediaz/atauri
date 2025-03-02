@@ -4,12 +4,14 @@ import { Link, useLocation, useParams } from "react-router-dom"
 import { MENU_ITEMS } from "router/router.constants";
 import './menu.css';
 import { MenuItem } from "router/gatza.constants";
+import AtauriLogo from "./a-circle.svg";
 
-interface MenuProps { 
+interface MenuProps {
   isOpen: boolean;
+  setIsOpen?: () => void;
 }
 
-export const Menu = ({ isOpen }:MenuProps) => {
+export const Menu = ({isOpen, setIsOpen}:MenuProps) => {
   const [t] = useTranslation();
   const { pathname } = useLocation();
   const currentPath = pathname.substring(3);
@@ -38,10 +40,13 @@ export const Menu = ({ isOpen }:MenuProps) => {
   const navClassName = `menu ${isOpen ? 'menu--is-open' : ''}`;
   const mainItemClassName = getClassName('', true);
   return (
-    <div role='navigation' className={navClassName}>
-      <Link to={`/${lang}`} className={mainItemClassName}>{t('home')}</Link>
-      {buildMenuGroup(GATZA_MENU_ITEMS)}
-      {buildMenuGroup(ARAOTZ_MENU_ITEMS)}
-    </div>
+    <>
+      <div className="menu-handler" onClick={setIsOpen}><AtauriLogo /></div>
+      <div role='navigation' className={navClassName}>
+        <Link to={`/${lang}`} className={mainItemClassName}>{t('home')}</Link>
+        {buildMenuGroup(GATZA_MENU_ITEMS)}
+        {buildMenuGroup(ARAOTZ_MENU_ITEMS)}
+      </div>
+    </>
   );
 }

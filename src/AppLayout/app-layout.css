@@ -10,22 +10,16 @@
 }
 
 .app-layout .header {
-    height: 10rem;
     width: 100%;
-    padding: 2% 0;
+    padding: 3.5vh 0;
     position: relative;
+    text-align: center;
+}
+.app-layout .header svg {
+    width: 24vw;
+    height: auto;
 }
 
-.app-layout .header .menu-handler {
-    position: absolute;
-    bottom: 2%;
-    left: 2%;
-    height: 2rem;
-    cursor: pointer;
-    display: flex;
-    align-items: flex-end;
-    gap: 4px;
-}
 
 .app-layout .body {
     height: 100%;
@@ -44,4 +38,33 @@
 
 .app-layout .body .content--menu-is-open{
     padding-left: 250px;
+}
+
+/*MacBook 13"*/
+@media screen and (max-width: 1920px) {
+
+}
+/*iPadPro Horizontal*/
+@media screen and (max-width: 1382px) {
+
+}
+/*iPadPro Vertical / iPad HorizontaL*/
+@media screen and (max-width: 1024px) {
+}
+
+/*iPhoneX horizontal*/
+@media screen and (max-width: 900px) {
+
+}
+
+/*iPad Vertical iPhone6/7/8 Horizontal*/
+@media screen and (max-width: 768px) {
+}
+
+/*iPhoneX/iPhone6/7/8 vertical*/
+@media screen and (max-width: 480px) {
+    .app-layout .header svg {
+        width: 40vw;
+        height: auto;
+    }
 }

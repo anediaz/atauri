@@ -1,3 +1,9 @@
+.menu-handler {
+    cursor: pointer;
+    margin-left: 30px;;
+    width: fit-content;
+    height: 20px;
+}
 .menu {
     display: flex;
     flex-direction: column;
@@ -13,7 +19,7 @@
 
 .menu.menu--is-open {
     left:0;
-    padding: 30px 30px;
+    padding: 10px 30px;
 }
 
 .menu .menu-item {

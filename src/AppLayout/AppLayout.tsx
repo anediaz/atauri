@@ -1,7 +1,7 @@
 import { Menu } from "components/Menu/Menu";
 import { ReactNode, useState } from "react";
 import AtauriBanner from "./atauri-black.svg";
-import AtauriLogo from "../../public/a-circle.svg";
+import AtauriLogo from "./a-circle.svg";
 
 
 import './app-layout.css';
@@ -27,12 +27,12 @@ export const AppLayout = ({ language, setLanguage, children }: AppLayoutProps) =
         </a>
         <LanguageSelector currentLanguage={language} handleLanguageClick={setLanguage} />
       </header>
-      <body className="body">
+      <div className="body">
         <Menu isOpen={isMenuOpen} />
         <div className={`content ${isMenuOpen ? 'content--menu-is-open' : ''}`}>
           <main>{children}</main>
         </div>
-      </body>
+      </div>
       <div className="footer">
         <Footer />
       </div>

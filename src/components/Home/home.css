@@ -8,9 +8,39 @@
     grid-row: 1;
     grid-column: 1;
     visibility: hidden;
-    height: 68vh;
+    width: 60vw;
+    height: auto;
 }
 
 .home .slider .slider-image--is-visible {
     visibility: visible;
+}
+
+/*MacBook 13"*/
+@media screen and (max-width: 1920px) {
+
+}
+/*iPadPro Horizontal*/
+@media screen and (max-width: 1382px) {
+
+}
+/*iPadPro Vertical / iPad HorizontaL*/
+@media screen and (max-width: 1024px) {
+    .home .slider .slider-image {
+        width: 80vw;
+    }
+}
+
+/*iPhoneX horizontal*/
+@media screen and (max-width: 900px) {
+
+}
+
+/*iPad Vertical iPhone6/7/8 Horizontal*/
+@media screen and (max-width: 768px) {
+}
+
+/*iPhoneX/iPhone6/7/8 vertical*/
+@media screen and (max-width: 480px) {
+
 }

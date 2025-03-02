@@ -2,7 +2,7 @@
     cursor: pointer;
     margin-left: 30px;;
     width: fit-content;
-    height: 20px;
+    height: 3vh;
 }
 .menu {
     display: flex;
@@ -49,7 +49,38 @@
   font-weight: bold;
 }
 
+/*MacBook 13"*/
+@media screen and (max-width: 1920px) {
+
+}
+/*iPadPro Horizontal*/
+@media screen and (max-width: 1382px) {
+  .menu-handler {
+    height: 4vh;
+  }
+
+}
+/*iPadPro Vertical / iPad HorizontaL*/
+@media screen and (max-width: 1024px) {
+}
+
+/*iPhoneX horizontal*/
+@media screen and (max-width: 900px) {
+
+}
+
+/*iPad Vertical iPhone6/7/8 Horizontal*/
+@media screen and (max-width: 768px) {
+}
+
+/*iPhoneX/iPhone6/7/8 vertical*/
+@media screen and (max-width: 480px) {
+}
+
 @media screen and (max-height: 450px) {
   .menu {padding-top: 15px;}
   .menu .menu-item {font-size: 18px;}
 }
+
+
+

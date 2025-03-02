@@ -9,7 +9,6 @@ interface MenuProps {
   isOpen: boolean;
 }
 
-
 export const Menu = ({ isOpen }:MenuProps) => {
   const [t] = useTranslation();
   const { pathname } = useLocation();
@@ -36,9 +35,11 @@ export const Menu = ({ isOpen }:MenuProps) => {
     });
   }
 
+  const navClassName = `menu ${isOpen ? 'menu--is-open' : ''}`;
+  const mainItemClassName = getClassName('', true);
   return (
-    <div role='navigation' className={`menu ${isOpen ? 'menu--is-open' : ''}`}>
-      <Link to={`/${lang}`} className="menu-item menu-item-main">{t('home')}</Link>
+    <div role='navigation' className={navClassName}>
+      <Link to={`/${lang}`} className={mainItemClassName}>{t('home')}</Link>
       {buildMenuGroup(GATZA_MENU_ITEMS)}
       {buildMenuGroup(ARAOTZ_MENU_ITEMS)}
     </div>

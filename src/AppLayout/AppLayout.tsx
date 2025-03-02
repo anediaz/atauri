@@ -21,7 +21,7 @@ export const AppLayout = ({ language, setLanguage, children }: AppLayoutProps) =
   return (
     <div className='app-layout'>
       <header role="banner" className="header">
-        <div className="menu-handler" onClick={() => setIsMenuOpen(!isMenuOpen)}><AtauriLogo /></div>
+        <div className="menu-handler" onClick={() => setIsMenuOpen(!isMenuOpen)}><AtauriLogo />Menua</div>
         <a title="Atauri" aria-label="Atauri">
           <AtauriBanner />
         </a>

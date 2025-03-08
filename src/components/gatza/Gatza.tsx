@@ -1,11 +1,39 @@
-import { useTranslation } from "react-i18next";
+import { usePhotos } from "hooks/usePhotos";
+import React, { useEffect, useLayoutEffect, useRef } from "react";
+import { Gallery, PhotoProps } from "react-ikusi";
+import { PHOTOSET_IDS } from "./constants";
+import { useDimensions } from "hooks/useDimensions";
+
+export const CONFIGURATIONS = [
+  { minWidth: 1024, cols: 12, margin: 2 },
+  {
+    minWidth: 480, maxWidth: 1023, cols: 7, margin: 1,
+  },
+  { maxWidth: 479, cols: 4, margin: 1 },
+];
 
 export const Gatza = () => {
-    const [t] = useTranslation();
+    const photosetId = PHOTOSET_IDS.home;
+    const [galleryState, setGalleryState] = React.useState<PhotoProps[]>([]);
+    const { photos } = usePhotos({ photosetId, shouldFetch: !galleryState.length });
+    const ref = useRef<HTMLDivElement>(null);
+    const dimensions = useDimensions(ref)
+
+    useEffect(() => {
+        if (photos?.length && !galleryState.length) {
+            setGalleryState((prevState) => ([
+                ...prevState,
+                ...photos,
+            ]));
+        }
+    }, [setGalleryState, photos, photosetId]);
+
     return (
-        <div>
-            <h1>Gatza</h1>
-            <div>{t('gatza')}</div>
+        <div ref={ref}>
+            <Gallery
+                photos={galleryState}
+                configurations={CONFIGURATIONS}
+            />
         </div>
     )
 }

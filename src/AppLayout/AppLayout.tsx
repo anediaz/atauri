@@ -24,7 +24,7 @@ export const AppLayout = ({ language, setLanguage, children }: AppLayoutProps) =
         <LanguageSelector currentLanguage={language} handleLanguageClick={setLanguage} />
       </header>
       <div className="body">
-        <Menu isOpen={isMenuOpen} setIsOpen={()=>setIsMenuOpen(!isMenuOpen)} />
+        <Menu isOpen={isMenuOpen} setIsOpen={() => setIsMenuOpen(!isMenuOpen)} language={language} />
         <div className={`content ${isMenuOpen ? 'content--menu-is-open' : ''}`}>
           <main>{children}</main>
         </div>

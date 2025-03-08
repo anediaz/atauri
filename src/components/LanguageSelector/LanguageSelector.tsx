@@ -24,9 +24,9 @@ export const LanguageSelector = ({ currentLanguage, handleLanguageClick }: Langu
             aria-label={`language-item-${langItem}`}
             className={getClassName(langItem as AppLanguage)}
             onClick={() => {
-              const path = pathname.substring(3);
+              const path = pathname.replace(`/${currentLanguage}`, `/${langItem}`);
               handleLanguageClick(langItem);
-              navigate(`/${langItem}${path}`);
+              navigate(path);
               
             }}
             onKeyDown={() => { }}

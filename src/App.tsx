@@ -1,17 +1,17 @@
 import { AppLanguage, DEFAULT_LANGUAGE, isAppLanguage } from "app.constants";
 import { Suspense, useEffect, useState } from "react";
-import { BrowserRouter, Route, Routes, Navigate, useParams } from "react-router-dom";
+import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
 import { buildRoute, buildRoutes } from "router/Routes";
 import { BASE_PATH, ROUTES } from "router/router.constants";
 import './i18n/i18n';
 import { AppLayout } from "AppLayout/AppLayout";
 import { useTranslation } from "react-i18next";
-
+import { useLocaleFromPathname } from "hooks/useLocaleFromPathname";
 
 const LocalizedRouter = () => {
-    const { i18n } = useTranslation();
-    const { locale = DEFAULT_LANGUAGE } = useParams<AppLanguage>();
-    const [currentLanguage, setCurrentLanguage] = useState<AppLanguage>(locale);
+  const { i18n } = useTranslation();
+  const locale = useLocaleFromPathname();
+  const [currentLanguage, setCurrentLanguage] = useState<AppLanguage>(locale as AppLanguage);
 
     useEffect(() => {
         i18n.changeLanguage(isAppLanguage(locale) ? locale : DEFAULT_LANGUAGE);

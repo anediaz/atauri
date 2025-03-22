@@ -1,18 +1,14 @@
 import { usePhotos } from "hooks/usePhotos";
 import React, { useEffect, useRef } from "react";
 import { Gallery, PhotoProps } from "react-ikusi";
-import { PHOTOSET_IDS } from "./constants";
+import { PageWithGalleryType,PAGE_WITH_GALLERY } from "./constants";
 
-export const CONFIGURATIONS = [
-  { minWidth: 1024, cols: 12, margin: 2 },
-  {
-    minWidth: 480, maxWidth: 1023, cols: 7, margin: 1,
-  },
-  { maxWidth: 479, cols: 4, margin: 1 },
-];
+interface PageWithGalleryProps {
+    type: PageWithGalleryType;
+}
 
-export const Gatza = () => {
-    const photosetId = PHOTOSET_IDS.home;
+const PageWithGallery = ({ type }: PageWithGalleryProps) => {
+    const {photosetId, configurations} = PAGE_WITH_GALLERY[type];
     const [galleryState, setGalleryState] = React.useState<PhotoProps[]>([]);
     const { photos } = usePhotos({ photosetId, shouldFetch: !galleryState.length });
     const ref = useRef<HTMLDivElement>(null);
@@ -30,8 +26,11 @@ export const Gatza = () => {
         <div ref={ref}>
             <Gallery
                 photos={galleryState}
-                configurations={CONFIGURATIONS}
+                configurations={configurations}
             />
         </div>
     )
 }
+
+export const Gatza = () => <PageWithGallery type="gatza" />;
+export const MakingOf = () => <PageWithGallery type="makingof" />;

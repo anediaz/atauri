@@ -10,5 +10,8 @@
     "menu.araotz": "Araotz",
     "menu.araotz.makingof": "Making of",
     "menu.araotz.info": "Información",
-    "footer.webSiteInfo": "Página web desarrollada por $author"
+    "footer.webSiteInfo": "Página web desarrollada por $author",
+
+    "page.gatza.book.title": "Ver el libro",
+    "page.gatza.book.alt": "Libro"
 }

@@ -10,5 +10,8 @@
   "menu.araotz": "Araotz",
   "menu.araotz.makingof": "Making of",
   "menu.araotz.info": "Informazioa",
-  "footer.webSiteInfo": "$authork egindako webgunea"
+  "footer.webSiteInfo": "$authork egindako webgunea",
+
+  "page.gatza.book.title": "Liburua ikusi",
+  "page.gatza.book.alt": "Liburua"
 }

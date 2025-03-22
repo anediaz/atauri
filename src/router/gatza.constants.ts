@@ -1,4 +1,4 @@
-import { Book } from "components/gatza/Book";
+import { Book } from "components/gatza/Book/Book";
 import { Gatza } from "components/gatza/Gatza";
 import { Info } from "components/gatza/Info";
 import { MakingOf } from "components/gatza/MakingOf";

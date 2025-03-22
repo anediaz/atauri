@@ -1,8 +1,7 @@
 import { usePhotos } from "hooks/usePhotos";
-import React, { useEffect, useLayoutEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { Gallery, PhotoProps } from "react-ikusi";
 import { PHOTOSET_IDS } from "./constants";
-import { useDimensions } from "hooks/useDimensions";
 
 export const CONFIGURATIONS = [
   { minWidth: 1024, cols: 12, margin: 2 },
@@ -17,7 +16,6 @@ export const Gatza = () => {
     const [galleryState, setGalleryState] = React.useState<PhotoProps[]>([]);
     const { photos } = usePhotos({ photosetId, shouldFetch: !galleryState.length });
     const ref = useRef<HTMLDivElement>(null);
-    const dimensions = useDimensions(ref)
 
     useEffect(() => {
         if (photos?.length && !galleryState.length) {

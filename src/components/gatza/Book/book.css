@@ -1,0 +1,17 @@
+.book {
+  text-align: center;
+  margin-top: 0.2rem;
+  background-color: black;
+  height: 100vh;
+
+  .content-image {
+    height: 100%;
+    cursor: pointer;
+  }
+}
+
+@media (max-width: 768px) {
+  .book .content-image {
+    height: 11rem;
+  }
+}

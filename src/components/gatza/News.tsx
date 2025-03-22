@@ -6,7 +6,7 @@ export const News = () => {
     return (
         <div>
             <h1>Gatza - News</h1>
-            <div>{t('gatza')}</div>
+            <div>{t('page.gatza')}</div>
         </div>
     )
 }

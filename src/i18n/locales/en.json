@@ -1,7 +1,6 @@
 {
-    "home": "Home",
-    "gatza": "Gatza",
-    "araotz": "Families of Araotz",
+    "page.home": "Home",
+    "page.araotz": "Families of Araotz",
     "menu.gatza": "Gatza",
     "menu.gatza.book": "Book",
     "menu.gatza.makingof": "Making of",
@@ -12,7 +11,7 @@
     "menu.araotz.info": "Information",
     "footer.webSiteInfo": "Web site developed by $author",
 
-
+    "page.gatza": "Gatza",
     "page.gatza.book.title": "See book",
     "page.gatza.book.alt": "Book"
 }

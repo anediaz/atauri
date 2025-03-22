@@ -5,7 +5,7 @@ export const MakingOf = () => {
     return (
         <div>
             <h1>Araotz - MakingOf</h1>
-            <div>{t('araotz')}</div>
+            <div>{t('page.araotz')}</div>
         </div>
     )
 }

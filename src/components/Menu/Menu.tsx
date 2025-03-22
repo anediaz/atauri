@@ -40,7 +40,7 @@ export const Menu = ({isOpen, setIsOpen, language }:MenuProps) => {
     <>
       <div className="menu-handler" onClick={setIsOpen}><AtauriLogo /></div>
       <div role='navigation' className={navClassName}>
-        <Link to={`/${language}`} className={mainItemClassName}>{t('home')}</Link>
+        <Link to={`/${language}`} className={mainItemClassName}>{t('page.home')}</Link>
         {buildMenuGroup(GATZA_MENU_ITEMS)}
         {buildMenuGroup(ARAOTZ_MENU_ITEMS)}
       </div>

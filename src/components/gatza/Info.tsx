@@ -5,7 +5,7 @@ export const Info = () => {
     return (
         <div>
             <h1>Gatza - Info</h1>
-            <div>{t('gatza')}</div>
+            <div>{t('page.gatza')}</div>
         </div>
     )
 }

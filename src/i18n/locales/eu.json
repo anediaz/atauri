@@ -1,7 +1,6 @@
 {
-  "home": "Hasiera",
-  "gatza": "Gatza",
-  "araotz": "Araotzeko familiak",
+  "page.home": "Hasiera",
+  "page.araotz": "Araotzeko familiak",
   "menu.gatza": "Gatza",
   "menu.gatza.book": "Liburua",
   "menu.gatza.makingof": "Making of",
@@ -12,6 +11,7 @@
   "menu.araotz.info": "Informazioa",
   "footer.webSiteInfo": "$authork egindako webgunea",
 
+  "page.gatza": "Gatza",
   "page.gatza.book.title": "Liburua ikusi",
   "page.gatza.book.alt": "Liburua"
 }

@@ -13,5 +13,12 @@
 
     "page.gatza": "Gatza",
     "page.gatza.book.title": "Ver el libro",
-    "page.gatza.book.alt": "Libro"
+    "page.gatza.book.alt": "Libro",
+
+    "page.gatza.info.text.p1": "Gatza, ese es el nombre de este proyecto, el nombre que utilizan los habitantes de Leintz-Gatzaga para denominar a su pueblo. Gatza es una colección de retratos, pero sobre todo es un documento que representa el padrón gráfico de una pequeña población del País Vasco a comienzo del siglo XXI.",
+    "page.gatza.info.text.p2": "Gatza es un proyecto abierto, que comenzó en 2011 y que ha ido evolucionando a lo largo del tiempo. Al comienzo, pensaba realizar retratros de los habitantes de Leintz-Gatzaga, cada uno en su entorno, en el lugar de trabajo o en su casa. Pero el proyecto tomó otro rumbo, y, finalmente, todos los retratos los he realizado en una misma localización sobre un fondo negro.",
+    "page.gatza.info.text.p3": "El primer fruto de este proyecto fue un libro, Gatza. Leintz-Gatzagako herritarren erretratuak (Gatza. Retratos de los habitantes de Leintz-Gatzaga), publicado en 2015. Cada fotografía es el retrato de un habitante, y está estructurado por familias; de esta manera, el libro representa el rostro de Leintz-Gatzaga y su censo gráfico. Este sitio web es el segundo fruto del proyecto, y recoge un mosaico realizado con los retratos de los habitantes de Leintz-Gatzaga, 204 en total, casi la totalidad de los habitantes de la localidad. Pero además, se puede visualizar el libro en formato pdf, observar detalles de manos, pies y posturas así como imágenes obtenidas entre bambalinas que aportan un valor añadido.",
+    "page.gatza.info.text.p4": "Finalmente, debo decir que Gatza es un proyecto compartido con los habitantes de Leintz-Gatzaga, y realizado conjuntamente con ellos, por lo que quiero agradecer su implicación en el mismo.",
+    "page.gatza.info.contact.title": "Contacto",
+    "page.gatza.info.contact.mail": "e-mail"
 }

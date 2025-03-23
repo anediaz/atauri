@@ -13,5 +13,12 @@
 
     "page.gatza": "Gatza",
     "page.gatza.book.title": "See book",
-    "page.gatza.book.alt": "Book"
+    "page.gatza.book.alt": "Book",
+
+    "page.gatza.info.text.p1": "This project is called Gatza because that is in fact how the citizens of Leintz-Gatzaga refer to their village. Gatza is a collection of portraits, but more than anything else, it is a document, in other words, a photographic census of a small village in the Basque Country at the start of the 21st century.",
+    "page.gatza.info.text.p2": "Gatza is an open project; it was started in 2011 and has been changing in the course of its development. Initially, I wanted to produce portraits of the inhabitants of Gatzaga, each one in his or her own context in the workplace or at home, but the work took a different path. So after abandoning the intentions I had in mind, in the end, I put the inhabitants of Gatzaga in front of a black cloth and that is how I produced their portraits",
+    "page.gatza.info.text.p3": "The first outcome of this project was a book published in 2015 and entitled Gatza. Leintz-Gatzagako herritarren erretratuak (Gatza. Portraits of the Citizens of Leintz-Gatzaga). Each portrait is a photo of one inhabitant of Gatzaga, but the book provides a face and a photographic census of the village of Leintz-Gatzaga. This website is the second outcome of the project and consists of a mosaic made up of the portraits of the people of Gatzaga. 204 inhabitants in all appear in the mosaic, nearly all the inhabitants of the village. They are wearing their everyday clothes, just as they do when they are in an informal atmosphere among friends; what is more, I felt that it would be interesting to portray their body language, the positions of their hands and feet, in the portraits because they are highly significant.",
+    "page.gatza.info.text.p4": "Finally, I would like to stress that Gatza is a project shared with the people of Gatzaga and produced with their assistance.",
+    "page.gatza.info.contact.title": "Contact",
+    "page.gatza.info.contact.mail": "email"
 }

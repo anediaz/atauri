@@ -13,5 +13,12 @@
 
   "page.gatza": "Gatza",
   "page.gatza.book.title": "Voir le livre",
-  "page.gatza.book.alt": "Livre"
+  "page.gatza.book.alt": "Livre",
+
+  "page.gatza.info.text.p1": "Gatza est le nom de ce projet, étant donné que les habitants de Leintz-Gatzaga appellent leur village ainsi. Gatza est une collection de portraits, mais aussi un document de recensement graphique d'un petit village du Pays Basque.",
+  "page.gatza.info.text.p2": "Le premier résultat de ce projet était un livre nommé 'Gatza. Les portraits des habitants de Leintz-Gatzaga', publié en 2015. Chaque portrait est la photo d'un habitant, mais le livre est le visage et le recensement de Leintz-Gatzaga.",
+  "page.gatza.info.text.p3": "Ce site Web est le deuxième résultat de ce projet, qui contient un mosaic avec tous les portraits du livre. Cette mosaïque contient 204 photos au total, presque tous les habitants du village. Ils apparaissent avec des vêtements courants, comme s'ils étaient dans une ambiance décontractée. En plus, c'est intéressant de collecter leurs expressions corporelles, les positions de leurs mains et pieds, car ils sont très significatifs.",
+  "page.gatza.info.text.p4": "Pour finir, je dois dire que Gatza est un projet partagé et réalisé en collaboration avec les habitants de Gatzaga.",
+  "page.gatza.info.contact.title": "Contact",
+  "page.gatza.info.contact.mail": "email"
 }

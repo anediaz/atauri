@@ -1,6 +1,6 @@
 import { Book } from "components/gatza/Book/Book";
 import { Gatza, MakingOf } from "components/gatza/PageWithGallery";
-import { Info } from "components/gatza/Info";
+import { Info } from "components/gatza/Info/Info";
 import { News } from "components/gatza/News/News";
 import { RouteInfo } from "./Routes";
 

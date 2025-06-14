@@ -40,7 +40,7 @@ const LocalizedRouter = () => {
 
 const App = () => (
   <Suspense fallback={<div>suspense fallback</div>}>
-    <BrowserRouter>
+    <BrowserRouter basename="/atauri">
         <LocalizedRouter />
     </BrowserRouter>
   </Suspense>

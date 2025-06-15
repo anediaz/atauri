@@ -1,5 +1,5 @@
 import { Araotz } from "components/araotz/Araotz";
-import { Info } from "components/araotz/Info";
+import { Info } from "components/araotz/Info/Info";
 import { MakingOf } from "components/araotz/MakingOf";
 import { RouteInfo } from "./Routes";
 

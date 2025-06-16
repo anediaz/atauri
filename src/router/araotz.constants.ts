@@ -1,7 +1,7 @@
 import { Araotz } from "components/araotz/Araotz";
 import { Info } from "components/araotz/Info/Info";
-import { MakingOf } from "components/araotz/MakingOf";
 import { RouteInfo } from "./Routes";
+import { MakingOfAraotz } from "components/PageWithGallery/PageWithGallery";
 
 export const ARAOTZ_ROUTES: RouteInfo[] = [
     {
@@ -11,7 +11,7 @@ export const ARAOTZ_ROUTES: RouteInfo[] = [
         children: [
             {
                 id: 'makingof',
-                component: MakingOf,
+                component: MakingOfAraotz,
                 path: '/araotz/makingof',
             },
             {

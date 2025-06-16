@@ -1,12 +1,13 @@
 import { useEffect, useState } from 'react';
 import { getPhotos } from 'utils/FlickrAPI';
-import { SizeKeys } from 'utils/constants';
+import { PageType, SizeKeys } from 'utils/constants';
 import { TransformedPhotoProps, transformToPhoto } from 'utils/transform-flickr-result';
 
 const defDefault = SizeKeys.medium800;
 const bigDefault = SizeKeys.large;
 
 interface usePhotosProps {
+    pageType: PageType,
     photosetId: string,
     withTags?: boolean,
     shouldFetch?: boolean,
@@ -14,7 +15,7 @@ interface usePhotosProps {
     big?: SizeKeys
 }
 
-export const usePhotos = ({
+export const usePhotos = ({ pageType,
     photosetId, withTags = false, shouldFetch = true, def = defDefault, big = bigDefault,
 }: usePhotosProps) => {
     const [photosState, setPhotosState] = useState({ isPhotosFailed: false, photos: <TransformedPhotoProps[]>[] });
@@ -26,7 +27,7 @@ export const usePhotos = ({
                 `url${bigDefault}`,
                 ...(withTags ? ['tags'] : []),
             ];
-            const result = await getPhotos(id, params);
+            const result = await getPhotos(pageType, id, params);
             if (typeof result === 'string') {
                 setPhotosState({ isPhotosFailed: true, photos: [] });
                 return;

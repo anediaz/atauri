@@ -1,8 +1,6 @@
-import { PageWithGallery } from "components/PageWithGallery/page-with-gallery.types";
+import { PageWithGallery } from "./page-with-gallery.types";
 
-export type GalleryName = 'gatza' | 'makingof';
-
-export const PAGE_WITH_GALLERY_GATZA: PageWithGallery = {
+export const PAGE_WITH_GALLERY: PageWithGallery = {
     'gatza': {
         photosetId: '72157670317433475',
         configurations: [
@@ -12,8 +10,9 @@ export const PAGE_WITH_GALLERY_GATZA: PageWithGallery = {
             },
             { maxWidth: 479, cols: 4, margin: 1 },
         ],
+        pageType: 'gatza',
     },
-    'makingof': {
+    'gatza-makingof': {
         photosetId: '72157669315421710',
         configurations: [
             { minWidth: 1024, cols: 7, margin: 5 },
@@ -22,5 +21,18 @@ export const PAGE_WITH_GALLERY_GATZA: PageWithGallery = {
             },
             { maxWidth: 479, cols: 4, margin: 1 },
         ],
+        pageType: 'gatza',
+    },
+    'araotz-makingof': {
+        photosetId: '72157714754671087',
+        configurations: [
+            { minWidth: 1024, cols: 7, margin: 5 },
+            {
+                minWidth: 480, maxWidth: 1023, cols: 7, margin: 1,
+            },
+            { maxWidth: 479, cols: 4, margin: 1 },
+        ],
+        pageType: 'araotz',
+
     }
 }

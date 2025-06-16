@@ -8,3 +8,5 @@ export enum SizeKeys {
     medium800 = '_c',
     large = '_l'
 }
+
+export type PageType = 'gatza' | 'araotz';

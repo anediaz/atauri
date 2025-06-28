@@ -3,6 +3,7 @@ import React, { useEffect, useRef } from "react";
 import { Gallery, PhotoProps } from "react-ikusi";
 import { PAGE_WITH_GALLERY } from "./constants";
 import { GalleryName } from "./page-with-gallery.types";
+import './PageWithGallery.css';
 
 interface PageWithGalleryProps {
     galleryName: GalleryName;
@@ -24,7 +25,7 @@ const PageWithGallery = ({ galleryName }: PageWithGalleryProps) => {
     }, [setGalleryState, photos, photosetId]);
 
     return (
-        <div ref={ref}>
+        <div ref={ref} className={`page-with-gallery`}>
             <Gallery
                 photos={galleryState}
                 configurations={configurations}

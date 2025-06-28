@@ -30,14 +30,14 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: space-evenly;
-      background-color: white;
+      background-color: black;
       padding: calc(0.1rem + 2px) 0;
       width: 65%;
       margin: 0 auto;
       .article {
         width: calc(33% - 2px);
         height: calc(33% - 2px);
-        border: solid 1px black;
+        border: solid 1px white;
         &:hover {
           cursor: pointer;
         }

@@ -15,7 +15,7 @@ export const PAGE_WITH_GALLERY: PageWithGallery = {
     'gatza-makingof': {
         photosetId: '72157669315421710',
         configurations: [
-            { minWidth: 1024, cols: 7, margin: 5 },
+            { minWidth: 1024, cols: 7, margin: 3 },
             {
                 minWidth: 480, maxWidth: 1023, cols: 7, margin: 1,
             },
@@ -26,7 +26,7 @@ export const PAGE_WITH_GALLERY: PageWithGallery = {
     'araotz-makingof': {
         photosetId: '72157714754671087',
         configurations: [
-            { minWidth: 1024, cols: 7, margin: 5 },
+            { minWidth: 1024, cols: 7, margin: 3 },
             {
                 minWidth: 480, maxWidth: 1023, cols: 7, margin: 1,
             },

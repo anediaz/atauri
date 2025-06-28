@@ -1,6 +1,6 @@
 import { Menu } from "components/Menu/Menu";
 import { ReactNode, useState } from "react";
-import AtauriBanner from "./atauri-black.svg";
+import AtauriBanner from "./atauri-white-bg.svg";
 import './app-layout.css';
 import { Footer } from "./Footer/Footer";
 import { AppLanguage } from "app.constants";

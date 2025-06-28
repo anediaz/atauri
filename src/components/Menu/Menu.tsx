@@ -35,10 +35,12 @@ export const Menu = ({isOpen, setIsOpen, language }:MenuProps) => {
   }
 
   const navClassName = `menu ${isOpen ? 'menu--is-open' : ''}`;
+  const overlayClassName = `menu-overlay ${isOpen ? 'menu-overlay--is-open' : ''}`;
   const mainItemClassName = getClassName('', true);
   return (
     <>
       <div className="menu-handler" onClick={setIsOpen}><AtauriLogo /></div>
+      <div className={overlayClassName} onClick={setIsOpen}></div>
       <div role='navigation' className={navClassName}>
         <Link to={`/${language}`} className={mainItemClassName}>{t('page.home')}</Link>
         {buildMenuGroup(GATZA_MENU_ITEMS)}

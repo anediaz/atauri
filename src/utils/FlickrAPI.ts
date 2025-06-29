@@ -12,11 +12,11 @@ const getAPIKey = (type: PageType) => {
 
 }
 
-export const getPhotos = async (type: PageType, photoSetId: string, sizes: string[]) => {
+export const getPhotos = async (type: PageType, photoSetId: string, sizes: string[], perPage?: number) => {
     const sizesParam = sizes.join(',');
     const apiKey = getAPIKey(type);
-    const getPhotosUrl = `https://api.flickr.com/services/rest/?method=flickr.photosets.getPhotos&api_key=${apiKey}&photoset_id=${photoSetId}&extras=${sizesParam}&format=json&nojsoncallback=true`;
-    const response = await fetch(getPhotosUrl);
+    const photosURL = `https://api.flickr.com/services/rest/?method=flickr.photosets.getPhotos&api_key=${apiKey}&photoset_id=${photoSetId}&extras=${sizesParam}&${perPage ? `per_page=${perPage}` : ''}&format=json&nojsoncallback=true`;
+    const response = await fetch(photosURL);
     return response && response.ok
         ? (await response.json()).photoset.photo
         : `Error while reading photoset=${photoSetId}`;

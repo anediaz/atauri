@@ -1,18 +1,20 @@
 import { usePhotos } from "hooks/usePhotos";
 import React, { useEffect, useRef } from "react";
 import { Gallery, PhotoProps } from "react-ikusi";
-import { PAGE_WITH_GALLERY } from "./constants";
 import { GalleryName } from "./page-with-gallery.types";
 import './PageWithGallery.css';
+import { PAGE_WITH_GALLERY } from "./constants";
 
 interface PageWithGalleryProps {
     galleryName: GalleryName;
+    photosetIdProp?: string;
 }
 
-const PageWithGallery = ({ galleryName }: PageWithGalleryProps) => {
-    const {pageType, photosetId, configurations} = PAGE_WITH_GALLERY[galleryName];
+const PageWithGallery = ({ galleryName, photosetIdProp }: PageWithGalleryProps) => {
     const [galleryState, setGalleryState] = React.useState<PhotoProps[]>([]);
-    const { photos } = usePhotos({ pageType, photosetId, shouldFetch: !galleryState.length });
+    const { pageType, photosetId: photosetIdFromConfig, configurations } = PAGE_WITH_GALLERY[galleryName];
+    const photosetId = photosetIdProp || photosetIdFromConfig;
+    const { photos } = usePhotos({ pageType, photosetId });
     const ref = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
@@ -22,7 +24,7 @@ const PageWithGallery = ({ galleryName }: PageWithGalleryProps) => {
                 ...photos,
             ]));
         }
-    }, [setGalleryState, photos, photosetId]);
+    }, [setGalleryState, photos]);
 
     return (
         <div ref={ref} className={`page-with-gallery`}>
@@ -35,5 +37,6 @@ const PageWithGallery = ({ galleryName }: PageWithGalleryProps) => {
 }
 
 export const Gatza = () => <PageWithGallery galleryName="gatza" />;
-export const MakingOf = () => <PageWithGallery galleryName="gatza-makingof" />;
+export const MakingOfGatza = () => <PageWithGallery galleryName="gatza-makingof" />;
+export const Araotz = () => <PageWithGallery galleryName="araotz"/>;
 export const MakingOfAraotz = () => <PageWithGallery galleryName="araotz-makingof"/>;

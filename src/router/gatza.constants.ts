@@ -1,5 +1,5 @@
 import { Book } from "components/gatza/Book/Book";
-import { Gatza, MakingOf } from "components/PageWithGallery/PageWithGallery";
+import { Gatza, MakingOfGatza } from "components/PageWithGallery/PageWithGallery";
 import { Info } from "components/gatza/Info/Info";
 import { News } from "components/gatza/News/News";
 import { RouteInfo } from "./Routes";
@@ -22,7 +22,7 @@ export const GATZA_ROUTES: RouteInfo[] = [
             },
             {
                 id: 'makingof',
-                component: MakingOf,
+                component: MakingOfGatza,
                 path: '/gatza/makingof',
             },
             {

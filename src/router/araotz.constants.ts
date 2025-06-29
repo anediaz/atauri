@@ -1,7 +1,6 @@
-import { Araotz } from "components/araotz/Araotz";
 import { Info } from "components/araotz/Info/Info";
 import { RouteInfo } from "./Routes";
-import { MakingOfAraotz } from "components/PageWithGallery/PageWithGallery";
+import { Araotz, MakingOfAraotz } from "components/PageWithGallery/PageWithGallery";
 
 export const ARAOTZ_ROUTES: RouteInfo[] = [
     {

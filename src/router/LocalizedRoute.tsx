@@ -16,7 +16,7 @@ export const LocalizedRoute = ({ children }: { children: React.ReactNode }) => {
         i18n.changeLanguage(lang as AppLanguage);
     }
     return (
-        <AppLayout setLanguage={updateLanguage}>
+        <AppLayout setLanguage={updateLanguage} language={locale}>
             {children}
         </AppLayout>
 

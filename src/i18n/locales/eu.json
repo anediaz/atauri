@@ -24,5 +24,12 @@
 
   "page.araotz.info.text.p1": "Erretratuak aurkituko dituzu toki honetan, Araotzen jatorria duten 22 familitako senideen erretratuak. Familia bakoitzak Araozko baserri batean du jatorria, eta hiruzpalau belaunalditako senideek osatzen dute. Familiak baserriarekin duen lotura oso handia bada ere, gaur egun baserri horietan ez da inor bizi, eta bigarren etxebizitza moduan erabiltzen dira. Izan ere, aspalditik oso biztanle gutxi dauzka Araotzek, araoztar gehien-gehienak Oñatin bizi dira eta. Edonola ere, esan beharra dago hau ez dela Araozko erretratua, erdiak inguru baino ez dira agertzen eta.",
   "page.araotz.info.text.p2": "2019an eginda daude erretratuak, Araozko frontoian eginda ere, familia batekoak izan ezik euren baserrian egin ziren eta; edizio lanak, berriz, 2020ko udaberrian, Covid-19aren itxialdian; eta webgunea, 2020ko udaberri-uda aldean.",
-  "page.araotz.info.text.p3": "Araoztarren eskuzabaltasuna, laguntza eta partaidetzari esker gauzatu ahal izan da proiektua. Eskerrik asko, beraz, denei. Araozko auzo batzordeko kideen laguntza ere ezinbestekoa izan da, jakina, lan hau egiteko orduan. Eskerrik asko, beraz, Koldo Zumalderi, Kerman Urkiari eta Luis Zumalderi. Webgunearen diseinua Ane Diaz de Tuestak egin du. Azkenik, argazkiak Joxefe Diaz de Tuestak egin ditu."
+  "page.araotz.info.text.p3": "Araoztarren eskuzabaltasuna, laguntza eta partaidetzari esker gauzatu ahal izan da proiektua. Eskerrik asko, beraz, denei. Araozko auzo batzordeko kideen laguntza ere ezinbestekoa izan da, jakina, lan hau egiteko orduan. Eskerrik asko, beraz, Koldo Zumalderi, Kerman Urkiari eta Luis Zumalderi. Webgunearen diseinua Ane Diaz de Tuestak egin du. Azkenik, argazkiak Joxefe Diaz de Tuestak egin ditu.",
+
+  "page.contact.title": "Kontaktua",
+  "page.contact.description": "Joxefe Diaz de Tuesta argazkilariarekin harremanetan jartzeko informazioa. Galdera, iradokizun edo enkargurik baduzu, ez izan zalantzarik kontaktatzeko.",
+  "page.contact.name": "Izena",
+  "page.contact.phone": "Telefonoa",
+  "page.contact.email": "E-posta",
+  "page.contact.website": "Webgunea"
 }

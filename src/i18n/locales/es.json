@@ -24,5 +24,12 @@
 
     "page.araotz.info.text.p1": "Encontrarás retratos en este lugar, retratos de los familiares de 22 familias con origen en Araotz. Cada familia tiene su origen en un caserío de Araotz y está compuesta por familiares de tres o cuatro generaciones. Aunque el vínculo entre las familias y el caserío es muy fuerte, actualmente ya no vive nadie en esos caseríos, y se utilizan como segunda residencia. De hecho, desde hace mucho tiempo Araotz tiene muy pocos habitantes, y la mayoría de los araoztares viven en Oñati. En cualquier caso, hay que decir que este no es un retrato completo de Araotz, ya que solo aparece aproximadamente la mitad.",
     "page.araotz.info.text.p2": "Los retratos fueron realizados en 2019, en el frontón de Araotz, excepto los de una familia que se hicieron en su propio caserío. El trabajo de edición se llevó a cabo en la primavera de 2020, durante el confinamiento por el Covid-19. La página web se creó entre la primavera y el verano de 2020.",
-    "page.araotz.info.text.p3": "El proyecto ha podido realizarse gracias a la generosidad, ayuda y participación de los araoztares. Muchas gracias, por tanto, a todos. La ayuda de los miembros de la junta vecinal de Araotz también ha sido imprescindible, por supuesto. Gracias, por tanto, a Koldo Zumalde, Kerman Urkia y Luis Zumalde. El diseño de la página web ha sido realizado por Ane Diaz de Tuesta. Por último, las fotografías han sido tomadas por Joxefe Diaz de Tuesta."
+    "page.araotz.info.text.p3": "El proyecto ha podido realizarse gracias a la generosidad, ayuda y participación de los araoztares. Muchas gracias, por tanto, a todos. La ayuda de los miembros de la junta vecinal de Araotz también ha sido imprescindible, por supuesto. Gracias, por tanto, a Koldo Zumalde, Kerman Urkia y Luis Zumalde. El diseño de la página web ha sido realizado por Ane Diaz de Tuesta. Por último, las fotografías han sido tomadas por Joxefe Diaz de Tuesta.",
+
+    "page.contact.title": "Contacto",
+    "page.contact.description": "Información de contacto para comunicarse con el fotógrafo Joxefe Diaz de Tuesta. Si tienes alguna pregunta, sugerencia o encargo, no dudes en ponerte en contacto.",
+    "page.contact.name": "Nombre",
+    "page.contact.phone": "Teléfono",
+    "page.contact.email": "Email",
+    "page.contact.website": "Sitio web"
 }

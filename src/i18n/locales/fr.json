@@ -24,5 +24,12 @@
 
   "page.araotz.info.text.p1": "Vous trouverez ici des portraits, ceux des membres de 22 familles originaires d'Araotz. Chaque famille provient d'un mas d'Araotz, et comprend des membres issus de trois ou quatre générations. Bien que le lien entre les familles et leurs fermes soit très fort, plus personne n'habite aujourd'hui dans ces fermes, elles sont utilisées comme résidences secondaires. En réalité, Araotz compte très peu d'habitants depuis longtemps, la grande majorité des Araoztars vivant désormais à Oñati. Quoi qu'il en soit, il faut préciser que ce n'est pas un portrait complet d'Araotz, seule environ la moitié y est représentée.",
   "page.araotz.info.text.p2": "Les portraits ont été réalisés en 2019, la plupart au fronton d'Araotz, sauf ceux d'une famille, pris dans leur propre ferme. Le travail d'édition a eu lieu au printemps 2020, pendant le confinement lié au Covid-19. Le site web a été créé entre le printemps et l'été 2020.",
-  "page.araotz.info.text.p3": "Ce projet a pu voir le jour grâce à la générosité, à l'aide et à la participation des habitants d'Araotz. Merci donc à tous. Le soutien des membres du comité de quartier d'Araotz a également été essentiel, bien sûr. Merci donc à Koldo Zumalde, Kerman Urkia et Luis Zumalde. Le site web a été conçu par Ane Diaz de Tuesta. Enfin, les photographies ont été prises par Joxefe Diaz de Tuesta."
+  "page.araotz.info.text.p3": "Ce projet a pu voir le jour grâce à la générosité, à l'aide et à la participation des habitants d'Araotz. Merci donc à tous. Le soutien des membres du comité de quartier d'Araotz a également été essentiel, bien sûr. Merci donc à Koldo Zumalde, Kerman Urkia et Luis Zumalde. Le site web a été conçu par Ane Diaz de Tuesta. Enfin, les photographies ont été prises par Joxefe Diaz de Tuesta.",
+
+  "page.contact.title": "Contact",
+  "page.contact.description": "Informations de contact pour contacter le photographe Joxefe Diaz de Tuesta. Si vous avez des questions, suggestions ou commandes, n'hésitez pas à nous contacter.",
+  "page.contact.name": "Nom",
+  "page.contact.phone": "Téléphone",
+  "page.contact.email": "Email",
+  "page.contact.website": "Site web"
 }

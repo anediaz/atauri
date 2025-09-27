@@ -4,7 +4,7 @@ import { Link, useLocation } from "react-router-dom"
 import { MENU_ITEMS } from "router/router.constants";
 import './menu.css';
 import { MenuItem } from "router/gatza.constants";
-import AtauriLogo from "./a-circle.svg";
+import { HamburgerIcon } from "./HamburgerIcon";
 
 interface MenuProps {
   isOpen: boolean;
@@ -39,7 +39,7 @@ export const Menu = ({isOpen, setIsOpen, language }:MenuProps) => {
   const mainItemClassName = getClassName('', true);
   return (
     <>
-      <div className="menu-handler" onClick={setIsOpen}><AtauriLogo /></div>
+      <HamburgerIcon isOpen={isOpen} onClick={setIsOpen || (() => {})} />
       <div className={overlayClassName} onClick={setIsOpen}></div>
       <div role='navigation' className={navClassName}>
         <Link to={`/${language}`} className={mainItemClassName}>{t('page.home')}</Link>

@@ -10,6 +10,7 @@ const HOME_ROUTE: RouteInfo = {
     id: 'home', path: '', component: Home
 }
 
+
 const ERROR_ROUTE: RouteInfo = {
     id: 'error', path: '/*', component: GeneralError
 }

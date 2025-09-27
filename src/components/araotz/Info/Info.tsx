@@ -1,18 +1,19 @@
 import { useTranslation } from "react-i18next";
-import './info.css';
+import { InfoPage } from "components/shared/InfoPage/InfoPage";
 
 export const Info = () => {
   const [t] = useTranslation();
 
-    return (
-        <div className="info-wrapper">
-        <div className="info-content">
-          <div className="info-text">
-            <p>{t("page.araotz.info.text.p1")}</p>
-            <p>{t("page.araotz.info.text.p2")}</p>
-            <p>{t("page.araotz.info.text.p3")}</p>
-          </div>
-        </div>
-      </div>
-    )
+  const paragraphs = [
+    t("page.araotz.info.text.p1"),
+    t("page.araotz.info.text.p2"),
+    t("page.araotz.info.text.p3")
+  ];
+
+  return (
+    <InfoPage 
+      title={t("page.araotz")}
+      paragraphs={paragraphs}
+    />
+  );
 }

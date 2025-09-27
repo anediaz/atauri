@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { ContactSection } from './ContactSection';
 import './home.css';
 
 const SLIDER_IMAGES = [
@@ -28,6 +29,7 @@ export const Home = () => {
                 <img src={SLIDER_IMAGES[1]} alt={`home-image${currentImageIndex}`} className={`slider-image ${getVisibleClassName(1)}`} />
                 <img src={SLIDER_IMAGES[2]} alt={`home-image${currentImageIndex}`} className={`slider-image ${getVisibleClassName(2)}`} />
             </div>
+            <ContactSection />
         </div>
     )
 }

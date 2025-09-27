@@ -24,5 +24,12 @@
 
     "page.araotz.info.text.p1": "You will find portraits in this place—portraits of relatives from 22 families of Araotz origin. Each family originates from a farmhouse in Araotz, and consists of relatives from three or four generations. Although the connection between the families and the farmhouses is very strong, nowadays no one lives in those farmhouses; they are used as second homes. In fact, Araotz has had very few inhabitants for a long time, and almost all Araotz people now live in Oñati. In any case, it must be said that this is not a full portrait of Araotz, as only about half are represented.",
     "page.araotz.info.text.p2": "The portraits were taken in 2019, most of them at the fronton in Araotz, except for one family whose photos were taken at their farmhouse. The editing work was done in the spring of 2020, during the Covid-19 lockdown. The website was developed in the spring-summer of 2020.",
-    "page.araotz.info.text.p3": "The project could be carried out thanks to the generosity, help, and participation of the people of Araotz. So thank you to everyone. The support of members of the Araotz neighborhood committee was also essential for this work, of course. So thank you to Koldo Zumalde, Kerman Urkia, and Luis Zumalde. The website was designed by Ane Diaz de Tuesta. Finally, the photographs were taken by Joxefe Diaz de Tuesta."
+    "page.araotz.info.text.p3": "The project could be carried out thanks to the generosity, help, and participation of the people of Araotz. So thank you to everyone. The support of members of the Araotz neighborhood committee was also essential for this work, of course. So thank you to Koldo Zumalde, Kerman Urkia, and Luis Zumalde. The website was designed by Ane Diaz de Tuesta. Finally, the photographs were taken by Joxefe Diaz de Tuesta.",
+
+    "page.contact.title": "Contact",
+    "page.contact.description": "Contact information to get in touch with photographer Joxefe Diaz de Tuesta. If you have any questions, suggestions, or commissions, please don't hesitate to reach out.",
+    "page.contact.name": "Name",
+    "page.contact.phone": "Phone",
+    "page.contact.email": "Email",
+    "page.contact.website": "Website"
 }

@@ -1,17 +1,81 @@
 .page-with-gallery {
-    background-color: white;
-    color: black;
+    background-color: black;
+    color: white;
     min-height: 100vh;
     width: 100%;
     padding: 1rem;
     margin: 0;
     overflow-x: hidden;
+    transition: background-color 0.3s ease;
+}
+
+.page-with-gallery--loaded {
+    background-color: white;
+    color: black;
+}
+
+.page-with-gallery--loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+}
+
+.page-with-gallery__loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 60vh;
+    color: white;
+}
+
+.page-with-gallery__spinner {
+    width: 40px;
+    height: 40px;
+    border: 3px solid rgba(255, 255, 255, 0.1);
+    border-top: 3px solid white;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.page-with-gallery__error {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60vh;
+    color: white;
+    text-align: center;
+}
+
+.page-with-gallery__error p {
+    font-size: 1.2rem;
+    opacity: 0.8;
 }
 
 /* Mobile phones */
 @media screen and (max-width: 480px) {
     .page-with-gallery {
         padding: 0.5rem;
+    }
+    
+    .page-with-gallery--loaded {
+        padding: 0.5rem;
+    }
+    
+    .page-with-gallery__spinner {
+        width: 32px;
+        height: 32px;
+        border-width: 2px;
+    }
+    
+    .page-with-gallery__loading {
+        height: 50vh;
     }
 }
 
@@ -20,11 +84,21 @@
     .page-with-gallery {
         padding: 1rem;
     }
+    
+    .page-with-gallery--loaded {
+        padding: 1rem;
+    }
 }
 
 /* Desktop */
 @media screen and (min-width: 769px) {
     .page-with-gallery {
+        padding: 1.5rem;
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+    
+    .page-with-gallery--loaded {
         padding: 1.5rem;
         max-width: 1400px;
         margin: 0 auto;

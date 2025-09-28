@@ -31,17 +31,35 @@
   content: " | ";
 }
 
-/* Mobile phones */
-@media screen and (max-width: 480px) {
+/* Small mobile phones */
+@media screen and (max-width: 390px) {
   .language-selector {
-    font-size: 0.9rem;
-    top: 15px;
-    right: 15px;
+    font-size: 0.7rem;
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    z-index: 200;
+  }
+  
+  .language-selector ul li:not(:first-child):before {
+    content: "|";
+    margin: 0 2px;
+  }
+}
+
+/* Mobile phones including iPhone 16 Pro */
+@media screen and (min-width: 391px) and (max-width: 480px) {
+  .language-selector {
+    font-size: 0.75rem;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 200;
   }
   
   .language-selector ul li:not(:first-child):before {
     content: " | ";
-    margin: 0 2px;
+    margin: 0 1px;
   }
 }
 

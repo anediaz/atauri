@@ -14,7 +14,7 @@ const PageWithGallery = ({ galleryName, photosetIdProp }: PageWithGalleryProps) 
     const [galleryState, setGalleryState] = React.useState<PhotoProps[]>([]);
     const { pageType, photosetId: photosetIdFromConfig, configurations } = PAGE_WITH_GALLERY[galleryName];
     const photosetId = photosetIdProp || photosetIdFromConfig;
-    const { photos } = usePhotos({ pageType, photosetId });
+    const { photos, isLoading, isPhotosFailed } = usePhotos({ pageType, photosetId });
     const ref = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
@@ -26,12 +26,26 @@ const PageWithGallery = ({ galleryName, photosetIdProp }: PageWithGalleryProps) 
         }
     }, [setGalleryState, photos]);
 
+    const showContent = !isLoading && galleryState.length > 0;
+
     return (
-        <div ref={ref} className={`page-with-gallery`}>
-            <Gallery
-                photos={galleryState}
-                configurations={configurations}
-            />
+        <div ref={ref} className={`page-with-gallery ${isLoading ? 'page-with-gallery--loading' : ''} ${showContent ? 'page-with-gallery--loaded' : ''}`}>
+            {isLoading && (
+                <div className="page-with-gallery__loading">
+                    <div className="page-with-gallery__spinner"></div>
+                </div>
+            )}
+            {isPhotosFailed && !isLoading && (
+                <div className="page-with-gallery__error">
+                    <p>Failed to load photos. Please try again later.</p>
+                </div>
+            )}
+            {showContent && (
+                <Gallery
+                    photos={galleryState}
+                    configurations={configurations}
+                />
+            )}
         </div>
     )
 }

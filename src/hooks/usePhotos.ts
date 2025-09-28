@@ -23,7 +23,11 @@ interface usePhotosProps {
 export const usePhotos = ({ pageType,
     photosetId, withTags = false, shouldFetch = true, def = defDefault, big = bigDefault,
 }: usePhotosProps) => {
-    const [photosState, setPhotosState] = useState({ isPhotosFailed: false, photos: <TransformedPhotoProps[]>[] });
+    const [photosState, setPhotosState] = useState({ 
+        isLoading: true, 
+        isPhotosFailed: false, 
+        photos: <TransformedPhotoProps[]>[] 
+    });
     const params = [
         `url${def}`,
         `url${bigDefault}`,
@@ -32,27 +36,30 @@ export const usePhotos = ({ pageType,
     useEffect(() => {
         // method that fetches and transforms photos to the right format
         const loadPhotos = async (id: string) => {
+            setPhotosState(prev => ({ ...prev, isLoading: true }));
             const result = await getPhotos(pageType, id, params);
             if (typeof result === 'string') {
-                setPhotosState({ isPhotosFailed: true, photos: [] });
+                setPhotosState({ isLoading: false, isPhotosFailed: true, photos: [] });
                 return;
             }
             const transformed = transformToPhoto(result, def, big);
-            setPhotosState({ isPhotosFailed: false, photos: transformed });
+            setPhotosState({ isLoading: false, isPhotosFailed: false, photos: transformed });
         };
         const loadOnlyOne = async (ids: string[]) => {
+            setPhotosState(prev => ({ ...prev, isLoading: true }));
             const result = await Promise.all(ids.map(id => getPhotos(pageType, id, [...params], 1)))
 
             // Use type guard to check if result is an array of FlickrResult arrays
             if (!isArrayOfFlickrResultArrays(result)) {
-                setPhotosState({ isPhotosFailed: true, photos: [] });
+                setPhotosState({ isLoading: false, isPhotosFailed: true, photos: [] });
                 return;
             }
 
             const transformed = transformToPhoto(result.flat(), def, big);
-            setPhotosState({ isPhotosFailed: false, photos: transformed });
+            setPhotosState({ isLoading: false, isPhotosFailed: false, photos: transformed });
         };
         if (!shouldFetch) {
+            setPhotosState(prev => ({ ...prev, isLoading: false }));
             return;
         }
         if (Array.isArray(photosetId)) {

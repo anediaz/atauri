@@ -41,14 +41,33 @@
     padding: 0 1rem;
 }
 
-/* Mobile first approach - Small phones */
-@media screen and (max-width: 480px) {
+/* Very small phones */
+@media screen and (max-width: 390px) {
     .app-layout .header {
-        padding: 1rem 0.5rem;
+        padding: 2.5rem 0.5rem 1rem 0.5rem;
+        min-height: 130px;
     }
     
     .app-layout .header svg {
-        width: clamp(150px, 50vw, 250px);
+        width: clamp(140px, 40vw, 200px);
+        margin-top: 15px;
+    }
+    
+    .app-layout .body .content {
+        padding: 0 0.5rem;
+    }
+}
+
+/* Mobile phones including iPhone 16 Pro */
+@media screen and (min-width: 391px) and (max-width: 480px) {
+    .app-layout .header {
+        padding: 2rem 0.5rem 1rem 0.5rem;
+        min-height: 120px;
+    }
+    
+    .app-layout .header svg {
+        width: clamp(150px, 45vw, 220px);
+        margin-top: 10px;
     }
     
     .app-layout .body .content {

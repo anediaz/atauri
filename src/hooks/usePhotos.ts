@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useQuery } from '@tanstack/react-query';
 import { getPhotos } from 'utils/FlickrAPI';
 import { PageType, SizeKeys } from 'utils/constants';
 import { TransformedPhotoProps, transformToPhoto } from 'utils/transform-flickr-result';
@@ -23,53 +23,58 @@ interface usePhotosProps {
 export const usePhotos = ({ pageType,
     photosetId, withTags = false, shouldFetch = true, def = defDefault, big = bigDefault,
 }: usePhotosProps) => {
-    const [photosState, setPhotosState] = useState({ 
-        isLoading: true, 
-        isPhotosFailed: false, 
-        photos: <TransformedPhotoProps[]>[] 
-    });
     const params = [
         `url${def}`,
         `url${bigDefault}`,
         ...(withTags ? ['tags'] : []),
     ];
-    useEffect(() => {
-        // method that fetches and transforms photos to the right format
-        const loadPhotos = async (id: string) => {
-            setPhotosState(prev => ({ ...prev, isLoading: true }));
-            const result = await getPhotos(pageType, id, params);
-            if (typeof result === 'string') {
-                setPhotosState({ isLoading: false, isPhotosFailed: true, photos: [] });
-                return;
-            }
-            const transformed = transformToPhoto(result, def, big);
-            setPhotosState({ isLoading: false, isPhotosFailed: false, photos: transformed });
-        };
-        const loadOnlyOne = async (ids: string[]) => {
-            setPhotosState(prev => ({ ...prev, isLoading: true }));
-            const result = await Promise.all(ids.map(id => getPhotos(pageType, id, [...params], 1)))
 
-            // Use type guard to check if result is an array of FlickrResult arrays
-            if (!isArrayOfFlickrResultArrays(result)) {
-                setPhotosState({ isLoading: false, isPhotosFailed: true, photos: [] });
-                return;
-            }
+    // Create a unique cache key for this photo query
+    const queryKey = ['photos', pageType, photosetId, withTags, def, big];
 
-            const transformed = transformToPhoto(result.flat(), def, big);
-            setPhotosState({ isLoading: false, isPhotosFailed: false, photos: transformed });
-        };
-        if (!shouldFetch) {
-            setPhotosState(prev => ({ ...prev, isLoading: false }));
-            return;
-        }
+    const fetchPhotos = async (): Promise<TransformedPhotoProps[]> => {
         if (Array.isArray(photosetId)) {
-            loadOnlyOne(photosetId);
+            // Handle multiple photoset IDs
+            const result = await Promise.all(photosetId.map(id => getPhotos(pageType, id, [...params], 1)));
+            
+            if (!isArrayOfFlickrResultArrays(result)) {
+                throw new Error(`Failed to fetch photos for photosets: ${photosetId.join(', ')}`);
+            }
+            
+            return transformToPhoto(result.flat(), def, big);
+        } else {
+            // Handle single photoset ID
+            const result = await getPhotos(pageType, photosetId, params);
+            
+            if (typeof result === 'string') {
+                throw new Error(`Failed to fetch photos for photoset: ${photosetId}`);
+            }
+            
+            return transformToPhoto(result, def, big);
         }
-        else {
-            loadPhotos(photosetId);
-        }
-    }, [big, def, photosetId, shouldFetch, withTags]);
+    };
 
-    return photosState;
+    const query = useQuery({
+        queryKey,
+        queryFn: fetchPhotos,
+        enabled: shouldFetch,
+        staleTime: 20 * 60 * 1000, // 20 minutes for photo galleries
+        gcTime: 2 * 60 * 60 * 1000, // 2 hours in memory
+        retry: (failureCount, error) => {
+            // Don't retry if it's a clear API error
+            if (error.message.includes('Failed to fetch photos')) {
+                return failureCount < 1;
+            }
+            return failureCount < 3;
+        },
+    });
+
+    return {
+        photos: query.data || [],
+        isLoading: query.isLoading,
+        isPhotosFailed: query.isError,
+        error: query.error,
+        refetch: query.refetch,
+    };
 };
 

@@ -1,6 +1,6 @@
 import { usePhotos } from "hooks/usePhotos";
-import React, { useEffect, useRef } from "react";
-import { Gallery, PhotoProps } from "react-ikusi";
+import { useRef } from "react";
+import { Gallery } from "react-ikusi";
 import { GalleryName } from "./page-with-gallery.types";
 import './PageWithGallery.css';
 import { PAGE_WITH_GALLERY } from "./constants";
@@ -11,22 +11,12 @@ interface PageWithGalleryProps {
 }
 
 const PageWithGallery = ({ galleryName, photosetIdProp }: PageWithGalleryProps) => {
-    const [galleryState, setGalleryState] = React.useState<PhotoProps[]>([]);
     const { pageType, photosetId: photosetIdFromConfig, configurations } = PAGE_WITH_GALLERY[galleryName];
     const photosetId = photosetIdProp || photosetIdFromConfig;
-    const { photos, isLoading, isPhotosFailed } = usePhotos({ pageType, photosetId });
+    const { photos, isLoading, isPhotosFailed, error, refetch } = usePhotos({ pageType, photosetId });
     const ref = useRef<HTMLDivElement>(null);
 
-    useEffect(() => {
-        if (photos?.length && !galleryState.length) {
-            setGalleryState((prevState) => ([
-                ...prevState,
-                ...photos,
-            ]));
-        }
-    }, [setGalleryState, photos]);
-
-    const showContent = !isLoading && galleryState.length > 0;
+    const showContent = !isLoading && photos.length > 0;
 
     return (
         <div ref={ref} className={`page-with-gallery ${isLoading ? 'page-with-gallery--loading' : ''} ${showContent ? 'page-with-gallery--loaded' : ''}`}>
@@ -38,11 +28,17 @@ const PageWithGallery = ({ galleryName, photosetIdProp }: PageWithGalleryProps) 
             {isPhotosFailed && !isLoading && (
                 <div className="page-with-gallery__error">
                     <p>Failed to load photos. Please try again later.</p>
+                    <button 
+                        onClick={() => refetch()} 
+                        className="page-with-gallery__retry-button"
+                    >
+                        Retry
+                    </button>
                 </div>
             )}
             {showContent && (
                 <Gallery
-                    photos={galleryState}
+                    photos={photos}
                     configurations={configurations}
                 />
             )}

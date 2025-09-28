@@ -1,48 +1,60 @@
 .menu-handler {
     cursor: pointer;
-    margin-left: 30px;;
+    margin-left: clamp(15px, 5vw, 30px);
     width: fit-content;
-    height: 3vh;
-    z-index: 1001;
-    position: relative;
+    height: clamp(24px, 3vh, 40px);
+    z-index: 1002;
+    position: fixed;
+    top: clamp(10px, 2vh, 20px);
+    left: clamp(15px, 5vw, 30px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .menu {
     display: flex;
     flex-direction: column;
-    padding: 30px 0;
-    height: 100%;
+    padding: 4rem 0 2rem 0;
+    height: 100vh;
     position: fixed;
     z-index: 1000;
-    left: -50%;
-    width: 250px;
-    overflow: hidden;
+    left: -100%;
+    width: clamp(250px, 70vw, 350px);
+    overflow-y: auto;
+    overflow-x: hidden;
     transition: 0.5s ease-in-out;
     background-color: black;
     box-shadow: 2px 0 10px rgba(255, 255, 255, 0.1);
+    top: 0;
 }
 
 .menu.menu--is-open {
-    left:0;
-    padding: 10px 30px;
+    left: 0;
+    padding: 4rem 1.5rem 2rem 1.5rem;
     background-color: #1a1a1a;
 }
 
 .menu .menu-item {
-  text-decoration: none;
-  color: #e0e0e0;
-  display: block;
+    text-decoration: none;
+    color: #e0e0e0;
+    display: block;
+    padding: 0.5rem 0;
+    border-radius: 4px;
+    transition: all 0.2s ease;
 }
 
 .menu .menu-item-main {
-  font-size: 20px;
-  padding-top: 8px;
+    font-size: clamp(16px, 4vw, 20px);
+    padding: 0.75rem 0;
+    font-weight: 500;
 }
 
 .menu .menu-item-sub {
-  font-size: 15px;
-  padding-top: 4px;
-  margin-left: 20px;
+    font-size: clamp(14px, 3.5vw, 16px);
+    padding: 0.5rem 0;
+    margin-left: clamp(15px, 4vw, 25px);
+    position: relative;
 }
 
 .menu-item:hover {
@@ -55,37 +67,87 @@
   font-weight: bold;
 }
 
-/*MacBook 13"*/
-@media screen and (max-width: 1920px) {
-
-}
-/*iPadPro Horizontal*/
-@media screen and (max-width: 1382px) {
-  .menu-handler {
-    height: 4vh;
-  }
-
-}
-/*iPadPro Vertical / iPad HorizontaL*/
-@media screen and (max-width: 1024px) {
-}
-
-/*iPhoneX horizontal*/
-@media screen and (max-width: 900px) {
-
-}
-
-/*iPad Vertical iPhone6/7/8 Horizontal*/
-@media screen and (max-width: 768px) {
-}
-
-/*iPhoneX/iPhone6/7/8 vertical*/
+/* Mobile phones */
 @media screen and (max-width: 480px) {
+    .menu {
+        width: 85vw;
+        padding: 4rem 1rem 1.5rem 1rem;
+    }
+    
+    .menu.menu--is-open {
+        padding: 4rem 1rem 1.5rem 1rem;
+    }
+    
+    .menu .menu-item-main {
+        font-size: 18px;
+        padding: 0.6rem 0;
+    }
+    
+    .menu .menu-item-sub {
+        font-size: 14px;
+        margin-left: 20px;
+    }
+    
+    .menu-handler {
+        margin-left: 15px;
+        height: 24px;
+    }
 }
 
-@media screen and (max-height: 450px) {
-  .menu {padding-top: 15px;}
-  .menu .menu-item {font-size: 18px;}
+/* Tablets */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+    .menu {
+        width: 300px;
+    }
+    
+    .menu .menu-item-main {
+        font-size: 18px;
+    }
+    
+    .menu .menu-item-sub {
+        font-size: 15px;
+    }
+}
+
+/* Desktop */
+@media screen and (min-width: 769px) {
+    .menu {
+        width: 320px;
+    }
+}
+
+/* Landscape orientation adjustments */
+@media screen and (max-height: 450px) and (orientation: landscape) {
+    .menu {
+        padding: 1rem 0;
+        font-size: smaller;
+    }
+    
+    .menu .menu-item-main {
+        font-size: 16px;
+        padding: 0.4rem 0;
+    }
+    
+    .menu .menu-item-sub {
+        font-size: 14px;
+        padding: 0.3rem 0;
+    }
+}
+
+/* Touch devices - increase tap targets */
+@media (hover: none) and (pointer: coarse) {
+    .menu .menu-item {
+        padding: 0.75rem 0;
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+    }
+    
+    .menu .menu-item-main {
+        min-height: 48px;
+        display: flex;
+        align-items: center;
+    }
 }
 
 .menu-overlay {

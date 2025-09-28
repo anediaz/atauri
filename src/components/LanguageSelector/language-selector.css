@@ -1,10 +1,11 @@
 .language-selector {
   margin: 0 auto;
-  font-size: 1.2rem;
+  font-size: clamp(0.9rem, 2.5vw, 1.2rem);
   position: absolute;
-  top: 15%;
-  right:4%;
+  top: clamp(10px, 15%, 30px);
+  right: clamp(8px, 4%, 40px);
   color: white;
+  z-index: 100;
 }
 
 .language-selector .language {
@@ -30,30 +31,52 @@
   content: " | ";
 }
 
-/* MacBook 13"*/
-@media screen and (max-width: 1920px) {
+/* Mobile phones */
+@media screen and (max-width: 480px) {
+  .language-selector {
+    font-size: 0.9rem;
+    top: 15px;
+    right: 15px;
+  }
+  
+  .language-selector ul li:not(:first-child):before {
+    content: " | ";
+    margin: 0 2px;
+  }
+}
+
+/* Tablets */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .language-selector {
+    font-size: 1rem;
+    top: 20px;
+    right: 25px;
+  }
+}
+
+/* Desktop */
+@media screen and (min-width: 769px) and (max-width: 1920px) {
   .language-selector {
     font-size: 1rem;
   }
 }
-/*iPadPro Horizontal*/
-@media screen and (max-width: 1382px) {
 
-}
-/*iPadPro Vertical / iPad HorizontaL*/
-@media screen and (max-width: 1024px) {
-}
-
-/*iPhoneX horizontal*/
-@media screen and (max-width: 900px) {
-
+/* Large screens */
+@media screen and (min-width: 1921px) {
+  .language-selector {
+    font-size: 1.2rem;
+    right: 60px;
+  }
 }
 
-/*iPad Vertical iPhone6/7/8 Horizontal*/
-@media screen and (max-width: 768px) {
-}
-
-/*iPhoneX/iPhone6/7/8 vertical*/
-@media screen and (max-width: 480px) {
+/* Touch devices - improve touch targets */
+@media (hover: none) and (pointer: coarse) {
+  .language-selector ul li {
+    padding: 4px;
+    min-height: 24px;
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+  }
 }
 

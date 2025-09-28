@@ -2,45 +2,83 @@
     display: grid;
     justify-content: center;
     align-items: center;
+    padding: 1rem;
+    max-width: 100%;
+    overflow: hidden;
 }
 
 .home .slider .slider-image {
     grid-row: 1;
     grid-column: 1;
     visibility: hidden;
-    width: 60vw;
+    width: clamp(280px, 60vw, 800px);
     height: auto;
+    max-width: 95vw;
+    object-fit: contain;
 }
 
 .home .slider .slider-image--is-visible {
     visibility: visible;
 }
 
-/*MacBook 13"*/
-@media screen and (max-width: 1920px) {
-
-}
-/*iPadPro Horizontal*/
-@media screen and (max-width: 1382px) {
-
-}
-/*iPadPro Vertical / iPad HorizontaL*/
-@media screen and (max-width: 1024px) {
+/* Mobile phones */
+@media screen and (max-width: 480px) {
+    .home .slider {
+        padding: 0.5rem;
+    }
+    
     .home .slider .slider-image {
-        width: 80vw;
+        width: clamp(250px, 90vw, 400px);
+        max-width: 90vw;
     }
 }
 
-/*iPhoneX horizontal*/
-@media screen and (max-width: 900px) {
-
+/* Tablets portrait */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+    .home .slider {
+        padding: 1rem;
+    }
+    
+    .home .slider .slider-image {
+        width: clamp(350px, 80vw, 600px);
+        max-width: 85vw;
+    }
 }
 
-/*iPad Vertical iPhone6/7/8 Horizontal*/
-@media screen and (max-width: 768px) {
+/* Tablets landscape and small desktops */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .home .slider .slider-image {
+        width: clamp(400px, 70vw, 700px);
+    }
 }
 
-/*iPhoneX/iPhone6/7/8 vertical*/
-@media screen and (max-width: 480px) {
+/* Desktop screens */
+@media screen and (min-width: 1025px) and (max-width: 1382px) {
+    .home .slider .slider-image {
+        width: clamp(500px, 65vw, 750px);
+    }
+}
 
+/* Large desktop screens */
+@media screen and (min-width: 1383px) {
+    .home .slider {
+        padding: 2rem;
+    }
+    
+    .home .slider .slider-image {
+        width: clamp(600px, 60vw, 900px);
+    }
+}
+
+/* Landscape orientation on mobile */
+@media screen and (max-width: 768px) and (orientation: landscape) {
+    .home .slider {
+        padding: 0.5rem;
+        max-height: 80vh;
+    }
+    
+    .home .slider .slider-image {
+        max-height: 70vh;
+        width: auto;
+    }
 }

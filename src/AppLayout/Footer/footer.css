@@ -1,11 +1,12 @@
 .footer {
     clear: both;
-    height: 3rem;
+    min-height: 3rem;
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    padding: 0 2rem;
+    padding: 1rem 2rem;
     color: #ffffff;
+    font-size: clamp(0.8rem, 2vw, 1rem);
 }
 
 .footer a {
@@ -14,10 +15,28 @@
     color: #ffffff;
     margin-left: .3rem;
 }
-  
-@media screen and (max-width: 900px) {
+
+/* Mobile phones */
+@media screen and (max-width: 480px) {
     .footer {
+        padding: 1rem 0.5rem;
+        font-size: 0.8rem;
+        justify-content: center;
+        text-align: center;
+    }
+}
+
+/* Tablets */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+    .footer {
+        padding: 1rem;
         font-size: 0.9rem;
-        padding: 1.2rem 1rem 0 0;
+    }
+}
+
+/* Desktop */
+@media screen and (min-width: 769px) {
+    .footer {
+        padding: 1rem 2rem;
     }
 }

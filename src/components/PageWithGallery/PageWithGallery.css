@@ -3,7 +3,7 @@
     color: white;
     min-height: 100vh;
     width: 100%;
-    padding: 1rem;
+    padding: 2px;
     margin: 0;
     overflow-x: hidden;
     transition: background-color 0.3s ease;
@@ -12,6 +12,7 @@
 .page-with-gallery--loaded {
     background-color: white;
     color: black;
+    padding: 1px;
 }
 
 .page-with-gallery--loading {
@@ -78,11 +79,11 @@
 /* Mobile phones */
 @media screen and (max-width: 480px) {
     .page-with-gallery {
-        padding: 0.5rem;
+        padding: 1px;
     }
     
     .page-with-gallery--loaded {
-        padding: 0.5rem;
+        padding: 1px;
     }
     
     .page-with-gallery__spinner {
@@ -99,25 +100,21 @@
 /* Tablets */
 @media screen and (min-width: 481px) and (max-width: 768px) {
     .page-with-gallery {
-        padding: 1rem;
+        padding: 2px;
     }
     
     .page-with-gallery--loaded {
-        padding: 1rem;
+        padding: 1px;
     }
 }
 
-/* Desktop */
+/* Desktop and larger screens */
 @media screen and (min-width: 769px) {
     .page-with-gallery {
-        padding: 1.5rem;
-        max-width: 1400px;
-        margin: 0 auto;
+        padding: 2px;
     }
     
     .page-with-gallery--loaded {
-        padding: 1.5rem;
-        max-width: 1400px;
-        margin: 0 auto;
+        padding: 1px;
     }
 }

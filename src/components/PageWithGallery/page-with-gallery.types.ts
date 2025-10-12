@@ -6,5 +6,5 @@ interface PageWithGalleryInfo {
     pageType: PageType;
 }
 
-export type GalleryName = 'gatza' | 'gatza-makingof' | 'araotz' | 'araotz-makingof';
+export type GalleryName = 'gatza' | 'gatza-makingof' | 'araotz' | 'araotz-makingof' | 'bestaldetik';
 export type PageWithGallery = Record<GalleryName, PageWithGalleryInfo>;

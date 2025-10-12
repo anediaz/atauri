@@ -43,6 +43,7 @@ const LocalizedRouter = () => {
             {buildRoute(ROUTES.HOME_ROUTE)}
             {buildRoutes(ROUTES.GATZA_ROUTES)}
             {buildRoutes(ROUTES.ARAOTZ_ROUTES)}
+            {buildRoutes(ROUTES.BESTALDETIK_ROUTES)}
             {buildRoute(ROUTES.ERROR_ROUTE)}
           </Route>
           <Route path='*' element={<Navigate to={`/${DEFAULT_LANGUAGE}`} />} />

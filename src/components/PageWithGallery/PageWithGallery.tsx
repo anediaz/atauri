@@ -50,3 +50,4 @@ export const Gatza = () => <PageWithGallery galleryName="gatza" />;
 export const MakingOfGatza = () => <PageWithGallery galleryName="gatza-makingof" />;
 export const Araotz = () => <PageWithGallery galleryName="araotz"/>;
 export const MakingOfAraotz = () => <PageWithGallery galleryName="araotz-makingof"/>;
+export const Bestaldetik = () => <PageWithGallery galleryName="bestaldetik"/>;

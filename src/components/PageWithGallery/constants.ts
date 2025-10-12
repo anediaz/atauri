@@ -43,5 +43,16 @@ export const PAGE_WITH_GALLERY: PageWithGallery = {
         ],
         pageType: 'araotz',
 
+    },
+    'bestaldetik': {
+        photosetId: '72177720329340952', // TODO: Add actual photoset ID
+        configurations: [
+            { minWidth: 1024, cols: 5, margin: 1 },
+            {
+                minWidth: 480, maxWidth: 1023, cols: 5, margin: 1,
+            },
+            { maxWidth: 479, cols: 2, margin: 1 },
+        ],
+        pageType: 'bestaldetik',
     }
 }

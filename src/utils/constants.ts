@@ -9,4 +9,4 @@ export enum SizeKeys {
     large = '_l'
 }
 
-export type PageType = 'gatza' | 'araotz';
+export type PageType = 'gatza' | 'araotz' | 'bestaldetik';

@@ -16,7 +16,7 @@ export const Menu = ({isOpen, setIsOpen, language }:MenuProps) => {
   const [t] = useTranslation();
   const { pathname } = useLocation();
   const currentPath = pathname.substring(3);
-  const { GATZA_MENU_ITEMS, ARAOTZ_MENU_ITEMS } = MENU_ITEMS;
+  const { GATZA_MENU_ITEMS, ARAOTZ_MENU_ITEMS, BESTALDETIK_MENU_ITEMS } = MENU_ITEMS;
 
   const getClassName = (itemPath: string, isGroup: boolean) => { 
     const className = isGroup ? "menu-item menu-item-main" : "menu-item menu-item-sub";
@@ -43,6 +43,7 @@ export const Menu = ({isOpen, setIsOpen, language }:MenuProps) => {
       <div className={overlayClassName} onClick={setIsOpen}></div>
       <div role='navigation' className={navClassName}>
         <Link to={`/${language}`} className={mainItemClassName}>{t('page.home')}</Link>
+        {buildMenuGroup(BESTALDETIK_MENU_ITEMS)}
         {buildMenuGroup(GATZA_MENU_ITEMS)}
         {buildMenuGroup(ARAOTZ_MENU_ITEMS)}
       </div>

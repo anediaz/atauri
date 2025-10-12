@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Gallery, PhotoProps } from "react-ikusi";
+import { FlickrResult } from "utils/transform-flickr-result";
 import { ARAOTZ_FAMILIES, AraotzFamily, AraotzFamilyWithPhoto } from "./constants";
 import "./araotz.css";
 
@@ -127,7 +128,7 @@ const Araotz: React.FC = () => {
     });
   };
 
-  const transformForGallery = (result: any[]): PhotoProps[] => {
+  const transformForGallery = (result: FlickrResult[]): PhotoProps[] => {
     const familiesSizes = getFamiliesSizes();
     return result.map((r, index) => ({
       src: r[familiesSizes.def.url],
@@ -157,7 +158,7 @@ const Araotz: React.FC = () => {
     };
 
     loadFamilyCovers();
-  }, []);
+  }, [getMiniFamiliesSizes, getPhotos, transformForAllFamilies]);
 
   // Handle family click
   const openFamily = async (index: number) => {

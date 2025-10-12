@@ -13,7 +13,7 @@ interface PageWithGalleryProps {
 const PageWithGallery = ({ galleryName, photosetIdProp }: PageWithGalleryProps) => {
     const { pageType, photosetId: photosetIdFromConfig, configurations } = PAGE_WITH_GALLERY[galleryName];
     const photosetId = photosetIdProp || photosetIdFromConfig;
-    const { photos, isLoading, isPhotosFailed, error, refetch } = usePhotos({ pageType, photosetId });
+    const { photos, isLoading, isPhotosFailed, refetch } = usePhotos({ pageType, photosetId });
     const ref = useRef<HTMLDivElement>(null);
 
     const showContent = !isLoading && photos.length > 0;

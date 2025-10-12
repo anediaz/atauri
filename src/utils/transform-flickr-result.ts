@@ -13,7 +13,7 @@ Object.values(SizeKeys).forEach((k: string) => {
   sizes.push(heightKey(k));
 });
 
-type FlickrResult = { [K in typeof urls[number]]: string }
+export type FlickrResult = { [K in typeof urls[number]]: string }
   & { [K in typeof sizes[number]]: number }
   & {
     id: string;

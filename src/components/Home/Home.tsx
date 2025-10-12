@@ -18,7 +18,7 @@ export const Home = () => {
     }
     useEffect(() => {
         setTimeout(slide, SLIDE_DURATION);
-    }, [currentImageIndex]);
+    }, [currentImageIndex, slide]);
 
     const getVisibleClassName = (index: number) => currentImageIndex === index ? 'slider-image--is-visible' : '';
     

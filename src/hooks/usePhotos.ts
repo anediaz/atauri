@@ -1,13 +1,13 @@
 import { useQuery } from '@tanstack/react-query';
 import { getPhotos } from 'utils/FlickrAPI';
 import { PageType, SizeKeys } from 'utils/constants';
-import { TransformedPhotoProps, transformToPhoto } from 'utils/transform-flickr-result';
+import { TransformedPhotoProps, transformToPhoto, FlickrResult } from 'utils/transform-flickr-result';
 
 const defDefault = SizeKeys.medium800;
 const bigDefault = SizeKeys.large;
 
 // Type guard to check if result is an array of FlickrResult arrays
-const isArrayOfFlickrResultArrays = (result: any): result is any[][] => {
+const isArrayOfFlickrResultArrays = (result: unknown): result is FlickrResult[][] => {
     return Array.isArray(result) && result.every(item => Array.isArray(item) && item.length > 0 && typeof item[0] === 'object' && item[0] !== null);
 };
 

@@ -1,6 +1,7 @@
 import { AppLanguage, DEFAULT_LANGUAGE, isAppLanguage } from "app.constants";
 import { Suspense, useEffect, useState } from "react";
-import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
+import { BrowserRouter, Route, Navigate } from "react-router-dom";
+import { Routes } from "@datadog/browser-rum-react/react-router-v6";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { buildRoute, buildRoutes } from "router/Routes";
 import { BASE_PATH, ROUTES } from "router/router.constants";

@@ -19,10 +19,6 @@ interface PhotoTextData {
   }[];
 }
 
-interface PhotoTextsData {
-  [key: string]: PhotoTextData;
-}
-
 interface PhotoDetailProps {
   language: AppLanguage;
 }

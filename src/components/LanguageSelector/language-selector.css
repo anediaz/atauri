@@ -72,10 +72,17 @@
   }
 }
 
-/* Desktop */
-@media screen and (min-width: 769px) and (max-width: 1920px) {
+/* Desktop - smaller screens */
+@media screen and (min-width: 769px) and (max-width: 1199px) {
   .language-selector {
     font-size: 1rem;
+  }
+}
+
+/* Desktop - 13" screens and similar */
+@media screen and (min-width: 1200px) and (max-width: 1920px) {
+  .language-selector {
+    font-size: 1.3rem;
   }
 }
 

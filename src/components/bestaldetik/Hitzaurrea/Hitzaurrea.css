@@ -1,0 +1,144 @@
+/* Hitzaurrea Page Styling */
+.hitzaurrea {
+  background-color: black;
+  color: white;
+  min-height: 100vh;
+  width: 100%;
+  padding: 2px;
+  font-family: "FreightSans Pro", "Tajawal", serif;
+}
+
+.hitzaurrea__container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.hitzaurrea__content {
+  background-color: #111;
+  padding: 2rem;
+  border-top: 1px solid #333;
+  margin: 0;
+}
+
+/* Title Styling */
+.hitzaurrea__title {
+  font-family: "Merriweather", "FreightSans Pro", "Tajawal", serif;
+  font-size: 2.5rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Text Content */
+.hitzaurrea__text {
+  margin-bottom: 3rem;
+}
+
+.hitzaurrea__paragraph {
+  font-size: 1.3rem;
+  line-height: 1.4;
+  margin-bottom: 2rem;
+  color: #ddd;
+  text-align: left;
+}
+
+.hitzaurrea__paragraph:last-child {
+  margin-bottom: 0;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1024px) {
+  .hitzaurrea {
+    padding: 2px;
+  }
+  
+  .hitzaurrea__container {
+    padding: 0;
+  }
+  
+  .hitzaurrea__content {
+    padding: 1rem;
+    margin: 0;
+  }
+  
+  .hitzaurrea__title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .hitzaurrea__paragraph {
+    font-size: 1.1rem;
+    line-height: 1.7;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .hitzaurrea {
+    padding: 1px;
+  }
+  
+  .hitzaurrea__container {
+    padding: 0;
+  }
+  
+  .hitzaurrea__content {
+    padding: 0.75rem;
+    margin: 0;
+  }
+  
+  .hitzaurrea__title {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+  }
+  
+  .hitzaurrea__paragraph {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .hitzaurrea__container {
+    padding: 0;
+  }
+  
+  .hitzaurrea__content {
+    padding: 1rem;
+  }
+  
+  .hitzaurrea__title {
+    font-size: 1.4rem;
+  }
+  
+  .hitzaurrea__paragraph {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+}
+
+/* High-resolution displays */
+@media screen and (min-width: 1920px) {
+  .hitzaurrea__container {
+    padding: 4rem;
+  }
+  
+  .hitzaurrea__content {
+    padding: 6rem;
+  }
+  
+  .hitzaurrea__title {
+    font-size: 3.5rem;
+    margin-bottom: 4rem;
+  }
+  
+  .hitzaurrea__paragraph {
+    font-size: 1.8rem;
+    line-height: 2;
+    margin-bottom: 3rem;
+  }
+}

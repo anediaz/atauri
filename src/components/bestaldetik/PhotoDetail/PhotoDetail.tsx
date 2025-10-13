@@ -76,13 +76,13 @@ export const PhotoDetail: React.FC<PhotoDetailProps> = ({ language }) => {
           <button 
             className="photo-detail__back-button" 
             onClick={handleBackClick}
-            aria-label={t('back', 'Back')}
+            aria-label={t('back')}
           >
-            ← {t('back', 'Back')}
+            ← {t('back')}
           </button>
         </div>
         <div className="photo-detail__loading">
-          {t('loading', 'Loading photos...')}
+          <div className="photo-detail__spinner"></div>
         </div>
       </div>
     );
@@ -95,9 +95,9 @@ export const PhotoDetail: React.FC<PhotoDetailProps> = ({ language }) => {
           <button 
             className="photo-detail__back-button" 
             onClick={handleBackClick}
-            aria-label={t('back', 'Back')}
+            aria-label={t('back')}
           >
-            ← {t('back', 'Back')}
+            ← {t('back')}
           </button>
         </div>
         <div className="photo-detail__loading">
@@ -134,7 +134,7 @@ export const PhotoDetail: React.FC<PhotoDetailProps> = ({ language }) => {
             <div className="photo-detail__person-info">
               <h1 className="photo-detail__name">{photoData.name}</h1>
               <p className="photo-detail__birth-info">
-                {photoData.birthPlace}, {photoData.birthDate}
+                ({photoData.birthPlace}, {photoData.birthDate})
               </p>
             </div>
 

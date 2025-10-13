@@ -1,6 +1,32 @@
 /* Import responsive design system */
 @import './styles/responsive.css';
 
+/* FreightSans Pro Font */
+@font-face {
+  font-family: 'FreightSans Pro';
+  src: url('/atauri/fonts/FreightSansPro-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'FreightSans Pro';
+  src: url('/atauri/fonts/FreightSansPro-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Merriweather Font */
+@font-face {
+  font-family: 'Merriweather';
+  src: url('/atauri/fonts/Merriweather-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 body {
   margin: 0;
   padding: 0;

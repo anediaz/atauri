@@ -45,7 +45,7 @@
 }
 
 .photo-detail__info {
-  max-width: 800px;
+  max-width: 1000px;
   margin: 0 auto;
 }
 
@@ -57,6 +57,7 @@
 }
 
 .photo-detail__name {
+  font-family: "FreightSans Pro", "Tajawal", serif;
   font-size: 2rem;
   font-weight: bold;
   margin: 0 0 0.5rem 0;
@@ -64,6 +65,8 @@
 }
 
 .photo-detail__birth-info {
+  font-family: "FreightSans Pro", "Tajawal", serif;
+  font-weight: bold;
   font-size: 1.2rem;
   color: #cccccc;
   margin: 0;
@@ -78,11 +81,13 @@
 }
 
 .photo-detail__section-title {
+  font-family: "Merriweather", "FreightSans Pro", "Tajawal", serif;
   font-size: 1.5rem;
   font-weight: bold;
   margin: 0 0 1rem 0;
   color: #ffffff;
   line-height: 1.3;
+  text-transform: uppercase;
 }
 
 .photo-detail__section-content {
@@ -90,9 +95,10 @@
 }
 
 .photo-detail__paragraph {
+  font-family: "FreightSans Pro", "Tajawal", serif;
   margin: 0 0 1rem 0;
   color: #e0e0e0;
-  font-size: 1rem;
+  font-size: 1.2rem;
   text-align: justify;
 }
 
@@ -105,8 +111,20 @@
   justify-content: center;
   align-items: center;
   height: 50vh;
-  font-size: 1.2rem;
-  color: #cccccc;
+}
+
+.photo-detail__spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid #333;
+  border-top: 3px solid #fff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 
 /* Responsive design */

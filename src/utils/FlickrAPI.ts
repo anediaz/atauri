@@ -8,6 +8,8 @@ const getAPIKey = (type: PageType) => {
             return import.meta.env.VITE_FLICKR_ARAOTZ_API_KEY;
         case 'bestaldetik':
             return import.meta.env.VITE_FLICKR_BESTALDETIK_API_KEY || import.meta.env.VITE_FLICKR_GATZA_API_KEY; // fallback to gatza key for now
+        case 'home':
+            return import.meta.env.VITE_FLICKR_GATZA_API_KEY; // use gatza key for home page
         default:
             throw new Error(`Unknown page type: ${type}`);
     }

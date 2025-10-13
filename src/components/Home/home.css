@@ -2,7 +2,7 @@
     display: grid;
     justify-content: center;
     align-items: center;
-    padding: 1rem;
+    padding: 0 1rem;
     max-width: 100%;
     overflow: hidden;
 }
@@ -11,7 +11,7 @@
     grid-row: 1;
     grid-column: 1;
     visibility: hidden;
-    width: clamp(280px, 60vw, 800px);
+    width: clamp(320px, 75vw, 1000px);
     height: auto;
     max-width: 95vw;
     object-fit: contain;
@@ -21,41 +21,61 @@
     visibility: visible;
 }
 
+.home .slider .slider-loading,
+.home .slider .slider-error {
+    grid-row: 1;
+    grid-column: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: clamp(320px, 75vw, 1000px);
+    height: clamp(240px, 56.25vw, 750px); /* maintains 4:3 aspect ratio */
+    max-width: 95vw;
+    background-color: #1a1a1a;
+    color: #ccc;
+    font-size: 1.1rem;
+    border-radius: 4px;
+}
+
+.home .slider .slider-error {
+    color: #ff6b6b;
+}
+
 /* Mobile phones */
 @media screen and (max-width: 480px) {
     .home .slider {
-        padding: 0.5rem;
+        padding: 0 0.5rem;
     }
     
     .home .slider .slider-image {
-        width: clamp(250px, 90vw, 400px);
-        max-width: 90vw;
+        width: clamp(280px, 92vw, 420px);
+        max-width: 92vw;
     }
 }
 
 /* Tablets portrait */
 @media screen and (min-width: 481px) and (max-width: 768px) {
     .home .slider {
-        padding: 1rem;
+        padding: 0 1rem;
     }
     
     .home .slider .slider-image {
-        width: clamp(350px, 80vw, 600px);
-        max-width: 85vw;
+        width: clamp(380px, 85vw, 700px);
+        max-width: 88vw;
     }
 }
 
 /* Tablets landscape and small desktops */
 @media screen and (min-width: 769px) and (max-width: 1024px) {
     .home .slider .slider-image {
-        width: clamp(400px, 70vw, 700px);
+        width: clamp(450px, 80vw, 850px);
     }
 }
 
 /* Desktop screens */
 @media screen and (min-width: 1025px) and (max-width: 1382px) {
     .home .slider .slider-image {
-        width: clamp(500px, 65vw, 750px);
+        width: clamp(550px, 75vw, 950px);
     }
 }
 
@@ -66,14 +86,25 @@
     }
     
     .home .slider .slider-image {
-        width: clamp(600px, 60vw, 900px);
+        width: clamp(700px, 70vw, 1200px);
+    }
+}
+
+/* Ultra-wide desktop screens */
+@media screen and (min-width: 1920px) {
+    .home .slider {
+        padding: 2.5rem;
+    }
+    
+    .home .slider .slider-image {
+        width: clamp(800px, 65vw, 1400px);
     }
 }
 
 /* Landscape orientation on mobile */
 @media screen and (max-width: 768px) and (orientation: landscape) {
     .home .slider {
-        padding: 0.5rem;
+        padding: 0 0.5rem;
         max-height: 80vh;
     }
     

@@ -120,7 +120,6 @@
     
     .app-layout .body .content {
         padding: 0 2.5rem;
-        max-width: 1400px;
-        margin: 0 auto;
+        width: 100%;
     }
 }

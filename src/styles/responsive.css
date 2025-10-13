@@ -27,12 +27,12 @@
   --font-3xl: 1.875rem;  /* 30px */
   --font-4xl: 2.25rem;   /* 36px */
 
-  /* Container widths */
+  /* Container widths - now fully responsive */
   --container-sm: 100%;
-  --container-md: 768px;
-  --container-lg: 1024px;
-  --container-xl: 1280px;
-  --container-xxl: 1536px;
+  --container-md: 100%;
+  --container-lg: 100%;
+  --container-xl: 100%;
+  --container-xxl: 100%;
 }
 
 /* Responsive utilities */
@@ -123,7 +123,7 @@
 /* Small mobile and up */
 @media (min-width: 480px) {
   .container {
-    max-width: var(--container-sm);
+    width: 100%;
   }
   
   .hidden-sm { display: none !important; }
@@ -137,7 +137,7 @@
 /* Tablet and up */
 @media (min-width: 768px) {
   .container {
-    max-width: var(--container-md);
+    width: 100%;
     padding-left: var(--spacing-md);
     padding-right: var(--spacing-md);
   }
@@ -154,7 +154,7 @@
 /* Desktop and up */
 @media (min-width: 1024px) {
   .container {
-    max-width: var(--container-lg);
+    width: 100%;
     padding-left: var(--spacing-lg);
     padding-right: var(--spacing-lg);
   }
@@ -173,7 +173,7 @@
 /* Large desktop and up */
 @media (min-width: 1382px) {
   .container {
-    max-width: var(--container-xl);
+    width: 100%;
   }
   
   .hidden-xl { display: none !important; }
@@ -184,7 +184,7 @@
 /* Extra large desktop and up */
 @media (min-width: 1920px) {
   .container {
-    max-width: var(--container-xxl);
+    width: 100%;
   }
   
   .hidden-xxl { display: none !important; }

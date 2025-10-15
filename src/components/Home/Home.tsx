@@ -32,7 +32,9 @@ export const Home = () => {
         return (
             <div className="home">
                 <div className="slider">
-                    <div className="slider-loading">Loading photos...</div>
+                    <div className="slider-loading">
+                        <div className="slider-spinner"></div>
+                    </div>
                 </div>
                 <ContactSection />
             </div>

@@ -42,17 +42,26 @@
     padding: 0.5rem 0;
     border-radius: 4px;
     transition: all 0.2s ease;
+    font-family: "FreightSans Pro", "Tajawal", serif;
 }
 
 .menu .menu-item-main {
-    font-size: clamp(16px, 4vw, 20px);
-    padding: 0.75rem 0;
-    font-weight: 500;
+    font-family: "Merriweather", "FreightSans Pro", "Tajawal", serif;
+    font-size: clamp(14px, 3.5vw, 18px);
+    padding: 0.5rem 0;
+    margin-top: 1.5rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.menu .menu-item-main:first-child {
+    margin-top: 0;
 }
 
 .menu .menu-item-sub {
+    font-family: "FreightSans Pro", "Tajawal", serif;
     font-size: clamp(14px, 3.5vw, 16px);
-    padding: 0.5rem 0;
+    padding: 0.3rem 0;
     margin-left: clamp(15px, 4vw, 25px);
     position: relative;
 }
@@ -79,12 +88,18 @@
     }
     
     .menu .menu-item-main {
-        font-size: 18px;
-        padding: 0.6rem 0;
+        font-size: 16px;
+        padding: 0.4rem 0;
+        margin-top: 1.2rem;
+    }
+    
+    .menu .menu-item-main:first-child {
+        margin-top: 0;
     }
     
     .menu .menu-item-sub {
         font-size: 14px;
+        padding: 0.25rem 0;
         margin-left: 20px;
     }
     
@@ -101,11 +116,18 @@
     }
     
     .menu .menu-item-main {
-        font-size: 18px;
+        font-size: 16px;
+        padding: 0.5rem 0;
+        margin-top: 1.3rem;
+    }
+    
+    .menu .menu-item-main:first-child {
+        margin-top: 0;
     }
     
     .menu .menu-item-sub {
         font-size: 15px;
+        padding: 0.3rem 0;
     }
 }
 
@@ -124,13 +146,18 @@
     }
     
     .menu .menu-item-main {
-        font-size: 16px;
-        padding: 0.4rem 0;
+        font-size: 14px;
+        padding: 0.3rem 0;
+        margin-top: 1rem;
+    }
+    
+    .menu .menu-item-main:first-child {
+        margin-top: 0;
     }
     
     .menu .menu-item-sub {
         font-size: 14px;
-        padding: 0.3rem 0;
+        padding: 0.2rem 0;
     }
 }
 

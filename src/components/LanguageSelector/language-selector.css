@@ -34,32 +34,48 @@
 /* Small mobile phones */
 @media screen and (max-width: 390px) {
   .language-selector {
-    font-size: 0.7rem;
+    font-size: 0.9rem;
     position: absolute;
-    top: 8px;
+    top: 15px;
     right: 8px;
     z-index: 200;
   }
   
   .language-selector ul li:not(:first-child):before {
     content: "|";
-    margin: 0 2px;
+    margin: 0 1px;
+  }
+  
+  .language-selector ul li {
+    padding: 3px;
+    min-height: 28px;
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
   }
 }
 
 /* Mobile phones including iPhone 16 Pro */
 @media screen and (min-width: 391px) and (max-width: 480px) {
   .language-selector {
-    font-size: 0.75rem;
+    font-size: 1rem;
     position: absolute;
-    top: 10px;
+    top: 18px;
     right: 10px;
     z-index: 200;
   }
   
   .language-selector ul li:not(:first-child):before {
-    content: " | ";
+    content: "|";
     margin: 0 1px;
+  }
+  
+  .language-selector ul li {
+    padding: 4px;
+    min-height: 30px;
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
   }
 }
 
@@ -67,7 +83,7 @@
 @media screen and (min-width: 481px) and (max-width: 768px) {
   .language-selector {
     font-size: 1rem;
-    top: 20px;
+    top: 25px;
     right: 25px;
   }
 }
@@ -94,11 +110,11 @@
   }
 }
 
-/* Touch devices - improve touch targets */
-@media (hover: none) and (pointer: coarse) {
+/* Touch devices - improve touch targets for tablets and larger */
+@media (hover: none) and (pointer: coarse) and (min-width: 481px) {
   .language-selector ul li {
-    padding: 4px;
-    min-height: 24px;
+    padding: 6px;
+    min-height: 32px;
     display: inline-flex;
     align-items: center;
     cursor: pointer;

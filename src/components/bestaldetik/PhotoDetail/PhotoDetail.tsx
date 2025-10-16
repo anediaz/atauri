@@ -29,6 +29,7 @@ export const PhotoDetail: React.FC<PhotoDetailProps> = ({ language }) => {
   const [t] = useTranslation();
   const [photoData, setPhotoData] = useState<PhotoTextData | null>(null);
   const [currentPhoto, setCurrentPhoto] = useState<TransformedPhotoProps | null>(null);
+  const [imageLoaded, setImageLoaded] = useState(false);
   
   // Get photos from the bestaldetik gallery to find the clicked photo
   const { pageType, photosetId: photosetIdFromConfig } = PAGE_WITH_GALLERY['bestaldetik'];
@@ -38,10 +39,16 @@ export const PhotoDetail: React.FC<PhotoDetailProps> = ({ language }) => {
   });
 
   useEffect(() => {
+    // Scroll to top when component mounts
+    window.scrollTo(0, 0);
+  }, []);
+
+  useEffect(() => {
     // Find the current photo by ID
     const photo = photos.find(p => p.id === photoId);
     if (photo) {
       setCurrentPhoto(photo);
+      setImageLoaded(false); // Reset image loaded state when photo changes
     }
   }, [photos, photoId]);
 
@@ -56,6 +63,10 @@ export const PhotoDetail: React.FC<PhotoDetailProps> = ({ language }) => {
 
   const handleBackClick = () => {
     navigate(`/${language}/bestaldetik`);
+  };
+
+  const handleImageLoad = () => {
+    setImageLoaded(true);
   };
 
 
@@ -122,10 +133,17 @@ export const PhotoDetail: React.FC<PhotoDetailProps> = ({ language }) => {
 
       <div className="photo-detail__content">
         <div className="photo-detail__image-container">
+          {!imageLoaded && (
+            <div className="photo-detail__image-loading">
+              <div className="photo-detail__spinner"></div>
+            </div>
+          )}
           <img 
             src={currentPhoto.bigSrc || currentPhoto.src} 
             alt={currentPhoto.title}
             className="photo-detail__image"
+            onLoad={handleImageLoad}
+            style={{ display: imageLoaded ? 'block' : 'none' }}
           />
         </div>
 

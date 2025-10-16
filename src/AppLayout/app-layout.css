@@ -11,7 +11,7 @@
 
 .app-layout .header {
     width: 100%;
-    padding: 2rem 1rem;
+    padding: 1.5rem 1rem 1rem 1rem;
     position: relative;
     text-align: center;
     display: flex;

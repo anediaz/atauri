@@ -134,7 +134,7 @@ export const PhotoDetail: React.FC<PhotoDetailProps> = ({ language }) => {
             <div className="photo-detail__person-info">
               <h1 className="photo-detail__name">{photoData.name}</h1>
               <p className="photo-detail__birth-info">
-                ({photoData.birthPlace}, {photoData.birthDate})
+                ({photoData.birthDate}, {photoData.birthPlace})
               </p>
             </div>
 

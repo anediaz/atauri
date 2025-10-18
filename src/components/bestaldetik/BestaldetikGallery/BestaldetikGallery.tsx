@@ -16,15 +16,9 @@ export const BestaldetikGallery: React.FC<BestaldetikGalleryProps> = ({ language
   const { photos, isLoading, isPhotosFailed, refetch } = usePhotos({ pageType, photosetId: photosetIdFromConfig });
   const ref = useRef<HTMLDivElement>(null);
 
-  console.log('BestaldetikGallery - photos:', photos);
-  console.log('BestaldetikGallery - isLoading:', isLoading);
-  console.log('BestaldetikGallery - isPhotosFailed:', isPhotosFailed);
-
   const handlePhotoClick = (photo: PhotoProps) => {
-    console.log('Photo clicked:', photo);
-    console.log('Navigating to:', `/${language}/bestetik/${photo.id}`);
     // Prevent the default lightbox behavior and navigate instead
-    navigate(`/${language}/bestetik/${photo.id}`);
+    navigate(`/${language}/bestaldetik/${photo.id}`);
   };
 
   const showContent = !isLoading && photos.length > 0;

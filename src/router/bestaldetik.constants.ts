@@ -14,9 +14,9 @@ export const BESTALDETIK_ROUTES: RouteInfo[] = [
         path: '/bestaldetik/hitzaurrea'
     },
     {
-        id: 'bestetik-photo',
+        id: 'bestaldetik-photo',
         component: BestaldetikWrapper,
-        path: '/bestetik/:photoId'
+        path: '/bestaldetik/:photoId'
     }];
 
 export const BESTALDETIK_MENU_ITEMS = [

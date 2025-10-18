@@ -10,15 +10,9 @@ export const BestaldetikWrapper: React.FC = () => {
   const location = useLocation();
   const language = useLocaleFromPathname() as AppLanguage;
 
-  console.log('BestaldetikWrapper - Location:', location.pathname);
-  console.log('BestaldetikWrapper - PhotoId:', photoId);
-  console.log('BestaldetikWrapper - Language:', language);
-
   if (photoId) {
-    console.log('Rendering PhotoDetail for photoId:', photoId);
     return <PhotoDetail language={language} />;
   }
 
-  console.log('Rendering BestaldetikGallery');
   return <BestaldetikGallery language={language} />;
 };

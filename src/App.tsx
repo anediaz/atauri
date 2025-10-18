@@ -1,6 +1,6 @@
 import { AppLanguage, DEFAULT_LANGUAGE, isAppLanguage } from "app.constants";
 import { Suspense, useEffect, useState } from "react";
-import { BrowserRouter, Route, Navigate } from "react-router-dom";
+import { BrowserRouter, Route, Navigate, useLocation } from "react-router-dom";
 import { Routes } from "@datadog/browser-rum-react/react-router-v6";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { buildRoute, buildRoutes } from "router/Routes";
@@ -9,6 +9,12 @@ import './i18n/i18n';
 import { AppLayout } from "AppLayout/AppLayout";
 import { useTranslation } from "react-i18next";
 import { useLocaleFromPathname } from "hooks/useLocaleFromPathname";
+import { useCurrentUser } from "hooks/useCurrentUser";
+import { useRef } from "react";
+import { startNewView } from "instrument";
+interface previousNavStateProps {
+  pathName: string,
+}
 
 // Create a client
 const queryClient = new QueryClient({
@@ -36,6 +42,21 @@ const LocalizedRouter = () => {
       i18n.changeLanguage(lang as AppLanguage);
       setCurrentLanguage(lang);
     }
+
+  useCurrentUser();  // Handle user details in RUM
+
+  const location = useLocation();
+  const previousPathRef = useRef<previousNavStateProps>({ pathName:''}); // we need to remember the previous path and page
+ 
+  useEffect(() => { 
+    // If the previous and the current states are different, we start a new view
+    if (previousPathRef.current.pathName !== location.pathname) { 
+      startNewView(location.pathname);
+    }
+    // Update the ref with the current state of the navigation 
+    previousPathRef.current = { pathName: location.pathname }; 
+  }, [location]); 
+
   return (
     <div>
       <AppLayout setLanguage={updateLanguage} language={currentLanguage}>

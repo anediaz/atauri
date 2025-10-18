@@ -9,7 +9,7 @@ export const Footer = () => {
   const [t] = useTranslation();
 
   const clickableText = (
-    <a aria-label='footer-ane-link' href={WEBSITE} target="_blank" rel="noopener noreferrer" key={2}>
+    <a aria-label='click-footer-ane-website' href={WEBSITE} target="_blank" rel="noopener noreferrer" key={2}>
       {AUTHOR}
     </a>
   );

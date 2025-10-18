@@ -29,7 +29,7 @@ export const Menu = ({isOpen, setIsOpen, language }:MenuProps) => {
       const groupLabel = isGroup ? "+ " : "";
       const label = t(item.menuItem);
       return (
-        <Link key={item.menuItem} to={`/${language}${item.path}`} className={className}>{groupLabel}{label}</Link>
+        <Link key={item.menuItem} to={`/${language}${item.path}`} className={className} aria-label={`click-menu-${item.menuItem}`}>{groupLabel}{label}</Link>
       );
     });
   }
@@ -39,10 +39,10 @@ export const Menu = ({isOpen, setIsOpen, language }:MenuProps) => {
   const mainItemClassName = getClassName('', true);
   return (
     <>
-      <HamburgerIcon isOpen={isOpen} onClick={setIsOpen || (() => {})} />
-      <div className={overlayClassName} onClick={setIsOpen}></div>
+      <HamburgerIcon isOpen={isOpen} onClick={setIsOpen || (() => {})} aria-label='click-menu-hamburger'/>
+      <div className={overlayClassName} onClick={setIsOpen} aria-label='click-menu-hamburger'></div>
       <div role='navigation' className={navClassName}>
-        <Link to={`/${language}`} className={mainItemClassName}>{t('page.home')}</Link>
+        <Link to={`/${language}`} className={mainItemClassName} aria-label='click-menu-home'>{t('page.home')}</Link>
         {buildMenuGroup(BESTALDETIK_MENU_ITEMS)}
         {buildMenuGroup(GATZA_MENU_ITEMS)}
         {buildMenuGroup(ARAOTZ_MENU_ITEMS)}

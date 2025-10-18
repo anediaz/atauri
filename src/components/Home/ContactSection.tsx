@@ -35,6 +35,7 @@ export const ContactSection: React.FC = () => {
         onClick={() => setIsExpanded(!isExpanded)}
         aria-expanded={isExpanded}
         aria-controls="contact-info"
+        aria-label={`click-contact-section-toggle-${isExpanded ? 'collapse' : 'expand'}`}
       >
         <span className="contact-section__toggle-text">
           {t("page.contact.title")}

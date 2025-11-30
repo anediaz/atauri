@@ -24,11 +24,6 @@
   color: #ffffff;
 }
 
-.photo-detail__content {
-  max-width: 1600px;
-  margin: 0 auto;
-}
-
 .photo-detail__image-container {
   margin-bottom: 3rem;
   display: flex;
@@ -48,6 +43,7 @@
 .photo-detail__info {
   max-width: 1400px;
   margin: 0 auto;
+  padding: 0 8rem;
 }
 
 .photo-detail__person-info {
@@ -174,5 +170,8 @@
 
   .photo-detail__section-title {
     font-size: 1.1rem;
+  }
+  .photo-detail__info {
+    padding: 0 2rem;
   }
 }

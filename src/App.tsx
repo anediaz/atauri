@@ -78,7 +78,7 @@ const LocalizedRouter = () => {
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <Suspense fallback={<div>suspense fallback</div>}>
-      <BrowserRouter basename="/atauri">
+      <BrowserRouter>
           <LocalizedRouter />
       </BrowserRouter>
     </Suspense>

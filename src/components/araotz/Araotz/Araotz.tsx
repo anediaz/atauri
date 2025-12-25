@@ -4,7 +4,7 @@ import { FlickrResult } from "utils/transform-flickr-result";
 import { ARAOTZ_FAMILIES, AraotzFamily, AraotzFamilyWithPhoto } from "./constants";
 import "./araotz.css";
 
-const FLICKR_API_KEY = import.meta.env.VITE_FLICKR_ARAOTZ_API_KEY;
+const FLICKR_API_KEY = import.meta.env.VITE_FLICKR_GENERAL_API_KEY;
 
 interface FlickrPhotoSize {
   label: string;

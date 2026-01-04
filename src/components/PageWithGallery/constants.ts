@@ -54,5 +54,16 @@ export const PAGE_WITH_GALLERY: PageWithGallery = {
             { maxWidth: 479, cols: 2, margin: 1 },
         ],
         pageType: 'bestaldetik',
+    },
+    'dynamic-album': {
+        photosetId: '', // Will be provided via photosetIdProp
+        configurations: [
+            { minWidth: 1024, cols: 4, margin: 3 },
+            {
+                minWidth: 480, maxWidth: 1023, cols: 4, margin: 1,
+            },
+            { maxWidth: 479, cols: 2, margin: 1 },
+        ],
+        pageType: 'home',
     }
 }

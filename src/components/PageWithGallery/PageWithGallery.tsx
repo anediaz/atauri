@@ -10,7 +10,7 @@ interface PageWithGalleryProps {
     photosetIdProp?: string;
 }
 
-const PageWithGallery = ({ galleryName, photosetIdProp }: PageWithGalleryProps) => {
+export const PageWithGallery = ({ galleryName, photosetIdProp }: PageWithGalleryProps) => {
     const { pageType, photosetId: photosetIdFromConfig, configurations } = PAGE_WITH_GALLERY[galleryName];
     const photosetId = photosetIdProp || photosetIdFromConfig;
     const { photos, isLoading, isPhotosFailed, refetch } = usePhotos({ pageType, photosetId });

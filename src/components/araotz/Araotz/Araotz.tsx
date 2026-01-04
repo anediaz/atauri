@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { Gallery, PhotoProps } from "react-ikusi";
 import { FlickrResult } from "utils/transform-flickr-result";
 import { ARAOTZ_FAMILIES, AraotzFamily, AraotzFamilyWithPhoto } from "./constants";
@@ -18,7 +18,7 @@ interface FlickrPhotoInfo {
   sizes: FlickrPhotoSize[];
 }
 
-const Araotz: React.FC = () => {
+const Araotz = () => {
   const [familiesWithPhotos, setFamiliesWithPhotos] = useState<AraotzFamilyWithPhoto[]>([]);
   const [selectedFamily, setSelectedFamily] = useState<{
     index: number;
@@ -34,7 +34,7 @@ const Araotz: React.FC = () => {
   const getPhotosetUrl = (photosetId: string, size: string) =>
     `https://api.flickr.com/services/rest/?method=flickr.photosets.getPhotos&api_key=${FLICKR_API_KEY}&extras=${size}&format=json&nojsoncallback=true&method=flickr.photosets.getPhotos&photoset_id=${photosetId}`;
 
-  const getPhoto = async (photoId: string, sizeLabels: string[]): Promise<FlickrPhotoInfo> => {
+  const getPhoto = useCallback(async (photoId: string, sizeLabels: string[]): Promise<FlickrPhotoInfo> => {
     const response = await fetch(getPhotoUrl(photoId));
     if (response && response.ok) {
       const infos = await response.json();
@@ -44,19 +44,19 @@ const Araotz: React.FC = () => {
       };
     }
     throw new Error(`Error while reading photo=${photoId}`);
-  };
+  }, []);
 
-  const getPhotos = async (photoIds: string[], sizeLabels: string[]): Promise<FlickrPhotoInfo[]> => {
+  const getPhotos = useCallback(async (photoIds: string[], sizeLabels: string[]): Promise<FlickrPhotoInfo[]> => {
     const photos = await Promise.all(photoIds.map(id => getPhoto(id, sizeLabels)));
     return photos;
-  };
+  }, [getPhoto]);
 
-  const getPhotoset = async (photoSetId: string, size: string) => {
+  const getPhotoset = useCallback(async (photoSetId: string, size: string) => {
     const response = await fetch(getPhotosetUrl(photoSetId, size));
     return response && response.ok
       ? (await response.json()).photoset.photo
       : { Error: `Error while reading photoset=${photoSetId}` };
-  };
+  }, []);
 
   // Device detection
   const getDeviceType = () => {
@@ -70,7 +70,7 @@ const Araotz: React.FC = () => {
     return "desktop";
   };
 
-  const getMiniFamiliesSizes = () => {
+  const getMiniFamiliesSizes = useCallback(() => {
     const device = getDeviceType();
     if (device === "mobile") {
       return {
@@ -82,9 +82,9 @@ const Araotz: React.FC = () => {
       def: "Small",
       big: "Large",
     };
-  };
+  }, []);
 
-  const getFamiliesSizes = () => {
+  const getFamiliesSizes = useCallback(() => {
     const device = getDeviceType();
     if (device === "mobile") {
       return {
@@ -96,10 +96,10 @@ const Araotz: React.FC = () => {
       def: { url: "url_l", width: "width_l", height: "height_l" },
       big: { url: "url_l", width: "width_l", height: "height_l" },
     };
-  };
+  }, []);
 
   // Transform functions
-  const transformForAllFamilies = (result: FlickrPhotoInfo[]): AraotzFamilyWithPhoto[] => {
+  const transformForAllFamilies = useCallback((result: FlickrPhotoInfo[]): AraotzFamilyWithPhoto[] => {
     const miniFamiliesSizes = getMiniFamiliesSizes();
     
     return result.map(({ sizes }, index) => {
@@ -126,9 +126,9 @@ const Araotz: React.FC = () => {
         gallery: gallery,
       };
     });
-  };
+  }, [getMiniFamiliesSizes]);
 
-  const transformForGallery = (result: FlickrResult[]): PhotoProps[] => {
+  const transformForGallery = useCallback((result: FlickrResult[]): PhotoProps[] => {
     const familiesSizes = getFamiliesSizes();
     return result.map((r, index) => ({
       src: r[familiesSizes.def.url],
@@ -138,7 +138,7 @@ const Araotz: React.FC = () => {
       id: r.id || index.toString(),
       title: r.title || '',
     }));
-  };
+  }, [getFamiliesSizes]);
 
   // Load initial family cover photos
   useEffect(() => {
@@ -146,7 +146,7 @@ const Araotz: React.FC = () => {
       try {
         setIsLoading(true);
         const miniFamiliesSizes = getMiniFamiliesSizes();
-        const coverIds = ARAOTZ_FAMILIES.map(f => f.coverId);
+        const coverIds = ARAOTZ_FAMILIES.map((f: AraotzFamily) => f.coverId);
         const result = await getPhotos(coverIds, Object.values(miniFamiliesSizes));
         const familiesWithPhotos = transformForAllFamilies(result);
         setFamiliesWithPhotos(familiesWithPhotos);
@@ -161,7 +161,7 @@ const Araotz: React.FC = () => {
   }, [getMiniFamiliesSizes, getPhotos, transformForAllFamilies]);
 
   // Handle family click
-  const openFamily = async (index: number) => {
+  const openFamily = useCallback(async (index: number) => {
     try {
       const family = ARAOTZ_FAMILIES[index];
       const familiesSizes = getFamiliesSizes();
@@ -177,12 +177,12 @@ const Araotz: React.FC = () => {
     } catch (error) {
       console.error("Error loading family photos:", error);
     }
-  };
+  }, [getFamiliesSizes, getPhotoset, transformForGallery]);
 
-  const closeFamily = () => {
+  const closeFamily = useCallback(() => {
     setSelectedFamily(null);
     window.scrollTo(0, 0);
-  };
+  }, []);
 
   // Gallery configurations
   const configurations = [

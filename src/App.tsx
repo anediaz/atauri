@@ -12,6 +12,8 @@ import { useLocaleFromPathname } from "hooks/useLocaleFromPathname";
 import { useCurrentUser } from "hooks/useCurrentUser";
 import { useRef } from "react";
 import { startNewView } from "instrument";
+import { DynamicMenuProvider } from "contexts/DynamicMenuContext";
+
 interface previousNavStateProps {
   pathName: string,
 }
@@ -66,6 +68,7 @@ const LocalizedRouter = () => {
             {buildRoutes(ROUTES.GATZA_ROUTES)}
             {buildRoutes(ROUTES.ARAOTZ_ROUTES)}
             {buildRoutes(ROUTES.BESTALDETIK_ROUTES)}
+            {buildRoutes(ROUTES.ALBUMS_ROUTES)}
             {buildRoute(ROUTES.ERROR_ROUTE)}
           </Route>
           <Route path='*' element={<Navigate to={`/${DEFAULT_LANGUAGE}`} />} />
@@ -77,11 +80,13 @@ const LocalizedRouter = () => {
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
-    <Suspense fallback={<div>suspense fallback</div>}>
-      <BrowserRouter>
-          <LocalizedRouter />
-      </BrowserRouter>
-    </Suspense>
+    <DynamicMenuProvider>
+      <Suspense fallback={<div>suspense fallback</div>}>
+        <BrowserRouter>
+            <LocalizedRouter />
+        </BrowserRouter>
+      </Suspense>
+    </DynamicMenuProvider>
   </QueryClientProvider>
 );
 

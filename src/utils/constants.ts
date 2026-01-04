@@ -1,5 +1,5 @@
 /** FLICKR */
-export const FLICKR_USER_ID = '185143642@N07';
+export const FLICKR_USER_ID = '24033063@N00';
 
 export enum SizeKeys {
     small = '_n',

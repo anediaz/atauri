@@ -14,9 +14,9 @@
     <meta property="og:site_name" content="Atauri" />
     <meta property="og:title" content="Atauri - Joxefe Diaz de Tuesta Portfolio" />
     <meta property="og:description" content="Joxefe Diaz de Tuesta's photography portfolio by Ane Diaz de Tuesta" />
-    <meta property="og:url" content="https://anediaz.github.io/atauri/" />
-    <meta property="og:image" content="https://anediaz.github.io/atauri/atauri-social.svg" />
-    <meta property="og:image:secure_url" content="https://anediaz.github.io/atauri/atauri-social.svg" />
+    <meta property="og:url" content="https://atauri.eus" />
+    <meta property="og:image" content="https://atauri.eus/atauri-social.svg" />
+    <meta property="og:image:secure_url" content="https://atauri.eus/atauri-social.svg" />
     <meta property="og:image:alt" content="Atauri Photography Portfolio" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
@@ -26,7 +26,7 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Atauri - Joxefe Diaz de Tuesta Portfolio" />
     <meta name="twitter:description" content="Joxefe Diaz de Tuesta's photography portfolio by Ane Diaz de Tuesta" />
-    <meta name="twitter:image" content="https://anediaz.github.io/atauri/atauri-social.svg" />
+    <meta name="twitter:image" content="https://atauri.eus/atauri-social.svg" />
     <meta name="twitter:image:alt" content="Atauri Photography Portfolio" />
     
     <!-- Additional metadata for better sharing -->
@@ -34,14 +34,31 @@
     <meta property="og:updated_time" content="2025-09-28T07:00:00Z" />
     
     <link rel="icon" type="image/svg+xml" href="a-circle.svg" />
-    <link rel="manifest" href="/atauri/manifest.json" />
+    <link rel="manifest" href="/manifest.json" />
     <title>Atauri - Joxefe Diaz de Tuesta Portfolio</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap" rel="stylesheet">
-    <script type="module" crossorigin src="/atauri/assets/index-sqR95s3b.js"></script>
-    <link rel="stylesheet" crossorigin href="/atauri/assets/index-ChRixP4f.css">
+
+    <!-- SPA redirect handler for GitHub Pages -->
+    <script>
+      // Check if we were redirected from 404.html with a query parameter
+      (function() {
+        var query = window.location.search;
+        if (query) {
+          var params = new URLSearchParams(query);
+          var redirect = params.get('p');
+          if (redirect) {
+            // Update the URL to the original path before React Router loads
+            // This removes the query parameter and sets the correct path
+            history.replaceState(null, '', redirect);
+          }
+        }
+      })();
+    </script>
+    <script type="module" crossorigin src="/assets/index-DTu6sNrx.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-TUKTI-3f.css">
   </head>
   <body style="background-color: black;">
     <div id="root"></div>

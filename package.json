@@ -1,7 +1,7 @@
 {
   "name": "atauri",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "author": "Ane Diaz de Tuesta",
   "license": "MIT",
@@ -13,6 +13,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
+    "upload-sourcemaps": "DATADOG_SITE=datadoghq.eu npx datadog-ci sourcemaps upload ./dist --service=atauri --release-version=$npm_package_version --minified-path-prefix=/",
     "lint": "eslint .",
     "preview": "vite preview",
     "predeploy": "npm run build && npm run postbuild",
@@ -20,6 +21,7 @@
     "postbuild": "cp dist/index.html dist/404.html"
   },
   "devDependencies": {
+    "@datadog/datadog-ci": "^5.12.1",
     "@eslint/js": "^9.20.0",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.2.0",
